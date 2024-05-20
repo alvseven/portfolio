@@ -65,7 +65,7 @@ export default function Home() {
 
   return (
     <main className="flex flex-col min-h-screen justify-center items-center m-auto">
-      <section className='flex flex-col gap-4 items-start'>
+      <section className='flex flex-col gap-4 items-start p-8'>
         {articles.map(article => <Article key={article.id} title={article.title} url={article.url} />)}
       </section>
     </main>
