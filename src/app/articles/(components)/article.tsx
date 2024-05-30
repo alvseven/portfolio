@@ -9,7 +9,7 @@ type ArticleProps = {
 
 export function Article({ title, url }: ArticleProps) {
     return (
-        <div className="flex gap-4 items-center w-full">
+        <div className="flex gap-4 items-center w-full text-2xl">
             <TypescriptIcon width={24} height={24} />
             <Link href={url} target='_blank'>{title}</Link>
         </div>

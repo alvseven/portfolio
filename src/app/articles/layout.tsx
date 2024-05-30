@@ -1,6 +1,9 @@
 
 import type { Metadata } from 'next'
 
+import { Akshar } from 'next/font/google'
+
+const akshar = Akshar({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Artigos',
@@ -15,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <title>Typescript articles</title>
-      <body>{children}</body>
+      <body className={`${akshar.className}`}>{children}</body>
     </html>
   )
 }
