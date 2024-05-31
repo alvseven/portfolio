@@ -18,14 +18,5 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: hsla(252, 89%, 17%, 1);
-
-  background: linear-gradient(90deg, hsla(252, 89%, 17%, 1) 0%, hsla(245, 71%, 11%, 1) 100%);
-  
-  background: -moz-linear-gradient(90deg, hsla(252, 89%, 17%, 1) 0%, hsla(245, 71%, 11%, 1) 100%);
-  
-  background: -webkit-linear-gradient(90deg, hsla(252, 89%, 17%, 1) 0%, hsla(245, 71%, 11%, 1) 100%);
-  
-  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#150553", endColorstr="#0B082F", GradientType=1 );
 }
 
