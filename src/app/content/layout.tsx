@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <title>Typescript articles</title>
-      <body className={`${akshar.className} bg-slate-950`}>{children}</body>
+      <body className={`${akshar.className} bg-zinc-950 text-slate-300`}>{children}</body>
     </html>
   )
 }

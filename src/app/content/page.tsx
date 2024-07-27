@@ -1,4 +1,3 @@
-
 import { Article } from './(components)/article';
 
 type Article = {
@@ -7,7 +6,7 @@ type Article = {
   url: string
 }
 
-export default function Home() {
+export default async function Home() {
 
   const articles: Array<Article> = [
     {
@@ -62,10 +61,9 @@ export default function Home() {
     }
   ];
 
-
   return (
-    <main className="flex flex-col min-h-screen justify-center items-center m-auto">
-      <section className='flex flex-col gap-4 items-start p-8'>
+    <main className="flex flex-col justify-center items-center m-auto min-h-screen">
+      <section className='flex flex-col items-start gap-4 p-8'>
         {articles.map(article => <Article key={article.id} title={article.title} url={article.url} />)}
       </section>
     </main>

@@ -18,6 +18,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
+  line-height: 1.5
 }
 
 pre {
@@ -26,7 +27,7 @@ pre {
 }
 
 pre [data-line] {
-  padding: 0.5rem 10rem 0 1rem;
+  padding: 0rem 4rem 0 1rem;
 }
 
 code {
@@ -50,4 +51,19 @@ code[data-line-numbers-max-digits="2"] > [data-line]::before {
 
 code[data-line-numbers-max-digits="3"] > [data-line]::before {
   width: 3rem;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #4A5568; 
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: #EDF2F7; 
+  border-radius: 4px;
 }
