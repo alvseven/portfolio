@@ -7,7 +7,7 @@ const akshar = Akshar({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Artigos',
-  description: 'Todos os meus artigos e threads sobre typescript',
+  description: 'Todos os meus artigos e conteúdos',
 }
 
 export default function RootLayout({
@@ -17,7 +17,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <title>Typescript articles</title>
       <body className={`${akshar.className} bg-zinc-950 text-slate-300`}>{children}</body>
     </html>
   )
