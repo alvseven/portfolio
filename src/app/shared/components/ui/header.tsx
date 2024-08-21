@@ -3,9 +3,9 @@ export const Header = () => (
     <p className="text-blue-500">Alves</p>
     <nav>
       <ul className="flex items-center">
-        <li>Primeiro </li>
+        {/* <li>Primeiro </li>
         <li>Segundo </li>
-        <li>Terceiro</li>
+        <li>Terceiro</li> */}
       </ul>
     </nav>
   </header>

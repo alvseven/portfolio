@@ -10,9 +10,5 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <div className="grid grid-cols-12 md:mx-auto sm:mt-6 md:max-w-7xl">
-      {children}
-    </div>
-  );
+  return children;
 }

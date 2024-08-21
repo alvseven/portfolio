@@ -61,7 +61,7 @@ export default async function Home() {
   ];
 
   return (
-    <main className="flex flex-col justify-center items-center m-auto min-h-screen">
+    <main className="flex flex-col justify-center items-center m-auto min-h-screen font-sans">
       <section className="flex flex-col items-start gap-4 p-8">
         {articles.map((article) => (
           <Article key={article.id} title={article.title} url={article.url} />
@@ -70,4 +70,3 @@ export default async function Home() {
     </main>
   );
 }
-

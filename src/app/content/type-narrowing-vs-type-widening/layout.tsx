@@ -25,7 +25,11 @@ export const metadata: Metadata = {
 };
 
 const Layout = ({ children }: { children: ReactNode }) => {
-  return children;
+  return (
+    <div className="grid grid-cols-12 md:mx-auto sm:mt-6 md:max-w-7xl">
+      {children}
+    </div>
+  );
 };
 
 export default Layout;
