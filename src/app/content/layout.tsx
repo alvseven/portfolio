@@ -1,23 +1,18 @@
-
-import type { Metadata } from 'next'
-
-import { Akshar } from 'next/font/google'
-
-const akshar = Akshar({ subsets: ['latin'] })
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Artigos',
-  description: 'Todos os meus artigos e conteúdos',
-}
+  title: "Artigos",
+  description: "Todos os meus artigos e conteúdos",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={`${akshar.className} bg-zinc-950 text-slate-300`}>{children}</body>
-    </html>
-  )
+    <div className="grid grid-cols-12 md:mx-auto sm:mt-6 md:max-w-7xl">
+      {children}
+    </div>
+  );
 }

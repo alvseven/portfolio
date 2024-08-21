@@ -3,9 +3,9 @@ import rehypePrettyCode from "rehype-pretty-code";
 
 /** @type {import('rehype-pretty-code').Options} */
 const options = {
-    theme: 'min-dark',
-    keepBackground: false,
-    defaultLang: 'typescript',
+  theme: "dracula-soft",
+  keepBackground: false,
+  defaultLang: "typescript",
 };
 
 const withMDX = nextMDX({
@@ -17,6 +17,9 @@ const withMDX = nextMDX({
 });
 
 /** @type {import('next').NextConfig} */
-const nextConfig = { reactStrictMode: true, pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'] };
+const nextConfig = {
+  reactStrictMode: true,
+  pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
+};
 
 export default withMDX(nextConfig);

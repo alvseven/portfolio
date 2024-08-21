@@ -3,22 +3,45 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background: 222 47% 11%;
+  --text-primary: 215 20% 65%;
+  --text-title: 210 40% 96%;
+  --text-title-secondary: 213 27% 84%;
+  --text-highlight: 214 32% 91%;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: var(--font-montserrat);
+  scroll-behavior: smooth;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  line-height: 1.5
+  color: hsl(var(--text-primary));
+  background: hsl(var(--background));
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-barlow-condensed);
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: hsla(var(--text-title-secondary));
+}
+
+p {
+  font-family: var(--font-montserrat);
 }
 
 pre {
@@ -59,11 +82,11 @@ code[data-line-numbers-max-digits="3"] > [data-line]::before {
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: #4A5568; 
+  background-color: #4a5568;
   border-radius: 4px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-  background-color: #EDF2F7; 
+  background-color: #edf2f7;
   border-radius: 4px;
 }
