@@ -21,6 +21,7 @@ body {
   color: hsl(var(--text-primary));
   background: hsl(var(--background));
   line-height: 1.5;
+  height: 100%;
 }
 
 h1,
