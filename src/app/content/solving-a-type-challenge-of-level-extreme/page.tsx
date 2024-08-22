@@ -9,7 +9,7 @@ export default async function Home() {
           Resolvendo um type challenge de nível extreme
         </h1>
 
-        <div className="place-content-center custom-scrollbar w-full h-52 overflow-y-auto">
+        <div className="place-content-center w-full h-52 overflow-y-auto scrollbar">
           <InclusiveRange />
         </div>
         <hr className="w-full h-px size-px" />
