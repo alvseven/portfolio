@@ -88,9 +88,11 @@ pre [data-line] {
 }
 
 code {
+  padding: 1rem;
   counter-reset: line;
-
-  border-left: 1px solid #3b4558;
+  background: #1e293b;
+  border-radius: 8px;
+  /* border-left: 1px solid #3b4558; */
 }
 
 code > [data-line]::before {
