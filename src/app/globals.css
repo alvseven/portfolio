@@ -79,7 +79,7 @@ pre {
   font-size: 1.125rem;
 
   @media (min-width: 768px) {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 }
 
@@ -92,7 +92,6 @@ code {
   counter-reset: line;
   background: #1e293b;
   border-radius: 8px;
-  /* border-left: 1px solid #3b4558; */
 }
 
 code > [data-line]::before {

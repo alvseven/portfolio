@@ -17,7 +17,7 @@ export default async function Home() {
             Type narrowing e type widening no typescript
           </h1>
           <Intro className="rounded-3xl" />
-          <p className="text-lg lg:text-2xl">
+          <p className="text-base lg:text-xl">
             Cansado de ouvir os termos
             <span className="px-2 text-highlight">type narrowing</span> e
             <span className="px-2 text-highlight">type widening</span> sem
@@ -25,21 +25,21 @@ export default async function Home() {
             importantes conceitos e verá exemplos práticos de cada caso.
           </p>
 
-          <h4 className="opacity-100 my-4 text-xl lg:text-3xl" id="narrowing">
+          <h4 className="opacity-100 my-4 text-xl lg:text-2xl" id="narrowing">
             Type Narrowing
           </h4>
 
-          <p className="text-lg lg:text-2xl">
+          <p className="text-base lg:text-xl">
             Para entender ambos os conceitos, comecemos com o seguinte cenário:
             imagine que alguém lhe disse:
             <i>&quot;Vou lhe dar um carro de presente&quot;</i>.
           </p>
-          <p className="text-lg lg:text-2xl">
+          <p className="text-base lg:text-xl">
             Observe que <i>&quot;um carro&quot;</i> pode ser qualquer carro.
             Você não sabe a cor, marca, modelo, se é elétrico, ou mesmo se é um
             carro real ou de brinquedo.
           </p>
-          <p className="text-lg lg:text-2xl">
+          <p className="text-base lg:text-xl">
             Agora, considere esta frase:
             <i>
               &quot;Vou lhe dar um carro de controle remoto, uma ferrari
@@ -47,23 +47,23 @@ export default async function Home() {
             </i>
             .
           </p>
-          <p className="text-lg lg:text-2xl">
+          <p className="text-base lg:text-xl">
             Perceba que agora temos um conjunto de possibilidades muito menor.
             Você tem muito mais informações sobre o tal carro.
           </p>
-          <p className="text-lg lg:text-2xl">
+          <p className="text-base lg:text-xl">
             Tornar uma informação ampla em uma informação mais específica, isso
             é<span className="pl-1 text-highlight">narrowing</span>.
           </p>
 
-          <h4 className="opacity-100 my-4 text-xl lg:text-3xl" id="narrowing">
+          <h4 className="opacity-100 my-4 text-xl lg:text-2xl" id="narrowing">
             Type Widening
           </h4>
 
-          <p className="text-lg lg:text-2xl">
+          <p className="text-base lg:text-xl">
             Type widening é justamente o contrário de type narrowing.
           </p>
-          <p className="text-lg lg:text-2xl">
+          <p className="text-base lg:text-xl">
             Agora, imagine a seguinte situação:
             <i>
               &quot;O carro que lhe dei de presente quebrou, mas vou lhe dar
@@ -71,29 +71,29 @@ export default async function Home() {
             </i>
             .
           </p>
-          <p className="text-lg lg:text-2xl">
+          <p className="text-base lg:text-xl">
             Note que antes tínhamos uma ferrari vermelha de controle remoto.
             Agora, novamente, não sabemos que carro é esse. Será a mesma
             ferrari? Ainda será uma ferrari? A cor ainda será vermelha? Ainda
             será de controle remoto?
           </p>
-          <p className="text-lg lg:text-2xl">
+          <p className="text-base lg:text-xl">
             Tornar uma informação específica em uma informação mais ampla, isso
             é <span className="pl-1 text-highlight">widening</span>.
           </p>
 
-          <h4 className="opacity-100 my-4 text-xl lg:text-3xl" id="narrowing">
+          <h4 className="opacity-100 my-4 text-xl lg:text-2xl" id="narrowing">
             Narrowing e Widening na prática
           </h4>
 
-          <p className="text-lg lg:text-2xl">
+          <p className="text-base lg:text-xl">
             Vejamos este exemplo: temos uma função que recebe um parâmetro que
             pode ser uma string, um número ou um booleano.
           </p>
 
           <NarrowingExample />
 
-          <p className="text-lg lg:text-2xl">
+          <p className="text-base lg:text-xl">
             Se usássemos métodos de string em um número, teríamos um erro em
             runtime. O que precisamos aqui é reduzir o conjunto de
             possibilidades. Só iremos usar um método de string se esse parâmetro
@@ -103,7 +103,7 @@ export default async function Home() {
 
           <NarrowingExampleFix />
 
-          <p className="text-lg lg:text-2xl">
+          <p className="text-base lg:text-xl">
             Agora, vamos entender o que é type widening. Observe este outro
             exemplo: declaramos uma variável com o valor &quot;alves&quot;
             usando a keyword const. Após isso, podemos observar um comportamento
@@ -113,12 +113,12 @@ export default async function Home() {
 
           <ConstExample />
 
-          <p className="text-lg lg:text-2xl">
+          <p className="text-base lg:text-xl">
             Se pararmos para analisar, faz sentido, não? Variáveis declaradas
             com const não podem ter seu valor reatribuído. Esse valor nunca vai
             mudar, então foi possível inferir &quot;alves&quot;.
           </p>
-          <p className="text-lg lg:text-2xl">
+          <p className="text-base lg:text-xl">
             Mas quando declaramos a variável com let, o typescript não infere o
             tipo exatamente como &quot;alves&quot;. Em vez disso, ele infere o
             tipo como string. E novamente, faz sentido, não? Podemos reatribuir
@@ -127,7 +127,7 @@ export default async function Home() {
 
           <LetExample />
 
-          <p className="text-lg lg:text-2xl">
+          <p className="text-base lg:text-xl">
             Antes tínhamos algo mais específico, agora temos algo mais amplo. O
             que antes era somente a string &quot;alves&quot; agora pode ser
             qualquer string. O typescript fez{" "}
@@ -135,23 +135,23 @@ export default async function Home() {
           </p>
 
           <h4
-            className="opacity-100 my-4 text-xl lg:text-3xl"
+            className="opacity-100 my-4 text-xl lg:text-2xl"
             id="let-type-inference"
           >
             Inferência de tipos em variáveis declaradas com &quot;let&quot;
           </h4>
 
-          <p className="text-lg lg:text-2xl">
+          <p className="text-base lg:text-xl">
             Talvez você esteja se perguntando: mas não pode ser qualquer coisa?
             Em vez de string, o tipo não deveria ser any? Ou unknown? Porque eu
             posso reatribuir para qualquer coisa, certo?
           </p>
-          <p className="text-lg lg:text-2xl">
+          <p className="text-base lg:text-xl">
             Sim, você está certo, mas nesse caso, o typescript tenta ser seu
             amigo. O tipo será o mais abrangente possível, mas baseado no valor
             inicial da variável.
           </p>
-          <p className="text-lg lg:text-2xl">
+          <p className="text-base lg:text-xl">
             Se você realmente quer que seja qualquer coisa, e que possa
             reatribuir o valor da sua variável que antes era uma string para um
             valor booleano, por exemplo, você precisa explicitamente declarar os
@@ -160,7 +160,7 @@ export default async function Home() {
 
           <LetExampleFix />
 
-          <p className="text-lg lg:text-2xl">
+          <p className="text-base lg:text-xl">
             Com isso, chegamos ao fim deste artigo. Espero que tenha ficado
             claro o que significa cada termo e como isso é aplicado no
             typescript. Compartilhe este artigo se foi útil. O link do
