@@ -11,6 +11,7 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-montserrat)"],
         mono: ["var(--font-barlow-condensed)"],
+        code: ["var(--font-fira-code)"],
       },
       textColor: {
         primary: "hsla(var(--text-primary))",

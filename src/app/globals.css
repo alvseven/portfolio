@@ -68,6 +68,11 @@ p {
   font-family: var(--font-montserrat);
 }
 
+code,
+pre {
+  font-family: var(--font-fira-code);
+}
+
 pre {
   overflow-x: auto;
   padding: 1rem 0;
@@ -84,6 +89,8 @@ pre [data-line] {
 
 code {
   counter-reset: line;
+
+  border-left: 1px solid #3b4558;
 }
 
 code > [data-line]::before {
