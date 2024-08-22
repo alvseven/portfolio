@@ -10,8 +10,8 @@ import LetExampleFix from "./mdx/let-example-fix.mdx";
 export default async function Home() {
   return (
     <>
-      <main className="flex col-span-12 sm:col-span-9 py-8 sm:pr-12">
-        <article className="flex flex-col gap-4 px-4">
+      <main className="flex col-span-12 sm:col-span-9 py-8">
+        <article className="flex flex-col gap-4 px-4 sm:pr-12 pl-6 xl:pl-0">
           <h1 className="opacity-100 font-bold text-3xl text-pretty text-title lg:text-4xl tracking-wide">
             Type narrowing e type widening no typescript
           </h1>
@@ -171,8 +171,8 @@ export default async function Home() {
           </p>
         </article>
       </main>
-      <aside className="md:block hidden mt-8 lg:ml-4 py-2 min-w-[13rem] lg:min-w-[18rem] font-sans text-xl">
-        <div className="top-24 sticky border-slate-600 border-l border-l-double">
+      <aside className="md:block hidden mt-8 lg:ml-4 py-2 min-w-fit lg:min-w-[18rem] font-sans text-xl">
+        <div className="md:block top-24 sticky border-slate-600 hidden border-l border-l-double">
           <ul className="flex flex-col gap-6 py-4 w-full">
             <li className="flex items-center hover:border-slate-400 pl-4 hover:border-l">
               <Link className="font-medium text-sm group" href="#narrowing">
