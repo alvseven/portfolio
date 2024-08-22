@@ -83,15 +83,17 @@ pre {
   }
 }
 
+pre {
+  background: #1e293b;
+  border-radius: 8px;
+}
+
 pre [data-line] {
   padding: 0rem 1rem 0 1rem;
 }
 
 code {
-  padding: 1rem;
   counter-reset: line;
-  background: #1e293b;
-  border-radius: 8px;
 }
 
 code > [data-line]::before {
