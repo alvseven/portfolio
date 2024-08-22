@@ -1,9 +1,11 @@
-import AlvesSignature from "@/../public/images/alves-signature.png";
 import Image from "next/image";
 import Link from "next/link";
+
 import { TwitterIcon } from "../icons/twitter";
 import { GithubIcon } from "../icons/github";
 import { LinkedinIcon } from "../icons/linkedin";
+
+import AlvesSignature from "@/../public/images/alves-signature.png";
 
 export const Footer = () => {
   return (

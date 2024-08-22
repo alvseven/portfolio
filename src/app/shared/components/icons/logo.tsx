@@ -16,7 +16,7 @@ export const Logo = (props: SVGProps<SVGSVGElement>) => (
     <path
       d="M383.86 5.12471C384.98 1.78353 389.548 1.28317 391.379 4.30106L426.406 62.0098C427.164 63.2579 427.199 64.809 426.498 66.0891L263.926 363H199.579C198.176 363 196.867 362.301 196.098 361.14L0.68121 66.284C-0.228247 64.9117 -0.226969 63.1364 0.684444 61.7654L38.6558 4.64792C40.3389 2.11603 44.1175 2.18959 45.6986 4.78502L263.926 363L383.86 5.12471Z"
       fill="#0814FF"
-      fill-opacity="0.9"
+      fillOpacity="0.9"
     />
     <defs>
       <linearGradient
@@ -27,10 +27,10 @@ export const Logo = (props: SVGProps<SVGSVGElement>) => (
         y2="407.012"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#3656C8" />
-        <stop offset="0.438542" stop-color="#001C7E" />
-        <stop offset="0.584375" stop-color="#012FAA" />
-        <stop offset="0.759103" stop-color="#0234B7" />
+        <stop stopColor="#3656C8" />
+        <stop offset="0.438542" stopColor="#001C7E" />
+        <stop offset="0.584375" stopColor="#012FAA" />
+        <stop offset="0.759103" stopColor="#0234B7" />
       </linearGradient>
     </defs>
   </svg>

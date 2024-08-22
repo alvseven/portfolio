@@ -1,8 +1,11 @@
-import Image from "next/image";
-
-import Banner from "@/../public/images/type-narrowing-vs-type-widening.ts.png";
 import Link from "next/link";
-import { ArrowRightIcon } from "@/app/shared/components/icons/arrow-right";
+
+import Intro from "./mdx/intro.mdx";
+import NarrowingExample from "./mdx/narrowing-example.mdx";
+import NarrowingExampleFix from "./mdx/narrowing-example-fix.mdx";
+import ConstExample from "./mdx/const-example.mdx";
+import LetExample from "./mdx/let-example.mdx";
+import LetExampleFix from "./mdx/let-example-fix.mdx";
 
 export default async function Home() {
   return (
@@ -12,7 +15,7 @@ export default async function Home() {
           <h1 className="opacity-100 font-bold text-3xl text-pretty text-title lg:text-4xl tracking-wide">
             Type narrowing e type widening no typescript
           </h1>
-          <Image className="rounded-3xl" src={Banner} alt="" />
+          <Intro className="rounded-3xl" />
           <p className="text-lg lg:text-2xl">
             Cansado de ouvir o termo
             <span className="px-2 text-highlight">type narrowing</span>
@@ -95,47 +98,113 @@ export default async function Home() {
             Vejamos esse exemplo: temos uma função que recebe um parâmetro que
             pode ser uma string, ou um número, ou um booleano
           </p>
+
+          <NarrowingExample />
+
+          <p className="text-lg lg:text-2xl">
+            Se usássemos métodos de string em um número, iríamos ter um erro em
+            runtime o que precisamos aqui é reduzir o conjunto de
+            possibilidades, só iremos usar um método de string se esse parâmetro
+            for uma string, tornando o código seguro, precisamos fazer type
+            narrowing
+          </p>
+
+          <NarrowingExampleFix />
+
+          <p className="text-lg lg:text-2xl">
+            Agora vamos entender o que é type widening vejamos esse outro
+            exemplo: declaramos uma variável com o valor &quot;alves&quot;,
+            usando a keyword const, após isso podemos observar um comportamento
+            interessante, o typescript inferiu que o tipo dessa variável é
+            exatamente &quot;alves&quot;
+          </p>
+
+          <ConstExample />
+
+          <p className="text-lg lg:text-2xl">
+            E se pararmos pra analisar, faz sentido, não? variáveis declaradas
+            com const não podem ter seu valor reatribuído, esse valor nunca vai
+            mudar, então foi possível inferir &quot;alves&quot;
+          </p>
+
+          <p className="text-lg lg:text-2xl">
+            Mas quando declaramos a variável com let, o typescript não infere o
+            tipo exatamente como &quot;alves&quot;, em vez disso, ele infere o
+            tipo como string e novamente, faz sentido, não? podemos reatribuir o
+            valor de uma variável declarada com let
+          </p>
+
+          <LetExample />
+
+          <p className="text-lg lg:text-2xl">
+            Antes tínhamos algo mais específico, agora temos algo mais amplo, o
+            que antes era somente a string &quot;alves&quot; agora pode ser
+            qualquer string o typescript fez type widening
+          </p>
+
+          <p className="text-lg lg:text-2xl">
+            Talvez você esteja se perguntando, mas não pode ser qualquer coisa?
+            em vez de string, o tipo não deveria ser any? unknown? porque eu
+            posso reatribuir pra qualquer coisa, certo?
+          </p>
+
+          <p className="text-lg lg:text-2xl">
+            Sim, você está certo, mas nesse caso, o typescript tenta ser seu
+            amigo, e o tipo vai ser o mais abrangente possível, mas baseado no
+            valor inicial da variável
+          </p>
+
+          <p className="text-lg lg:text-2xl">
+            Se você quer realmente que seja qualquer coisa, e que você possa
+            reatribuir o valor da sua variável que antes era uma string pra um
+            valor booleano por exemplo, você precisa explicitamente declarar os
+            possíveis tipos da variável
+          </p>
+
+          <LetExampleFix />
+
+          <p className="text-lg lg:text-2xl">
+            E com isso, chegamos ao fim desse artigo, eu espero que tenha ficado
+            claro o que signfica cada termo, e como isso é aplicado no
+            typescript, compartilhe esse artigo se foi útil, o link do
+            playground está no último item do menu lateral, até a próxima
+          </p>
         </article>
       </main>
-      <aside className="md:block hidden mt-8 lg:ml-4 min-w-[13rem] lg:min-w-[18rem] font-sans text-xl">
-        <div className="top-24 sticky w-fit">
-          <ul className="flex flex-col gap-4 w-full">
-            <li>
-              <Link
-                className="flex items-start space-x-2 pt-3 font-medium text-sm group"
-                href="#narrowing"
-              >
-                <span className="group-hover:text-title block">
-                  <ArrowRightIcon className="w-4 lg:w-6 h-4 lg:h-6 fill-slate-400" />
-                </span>
+      <aside className="md:block hidden mt-8 lg:ml-4 py-2 min-w-[13rem] lg:min-w-[18rem] font-sans text-xl">
+        <div className="top-24 sticky border-slate-600 border-l border-l-double">
+          <ul className="flex flex-col gap-6 py-4 w-full">
+            <li className="flex items-center hover:border-slate-400 pl-4 hover:border-l">
+              <Link className="font-medium text-sm group" href="#narrowing">
                 <span className="group-hover:text-title block text-lg lg:text-xl transform transition-transform group-hover:translate-x-[3px] ease-in-out">
                   Type narrowing
                 </span>
               </Link>
             </li>
-            <li>
-              <Link
-                className="flex items-start space-x-2 pt-3 font-medium text-sm group"
-                href="#widening"
-              >
-                <span className="group-hover:text-title block">
-                  <ArrowRightIcon className="w-4 lg:w-6 h-4 lg:h-6 fill-slate-400" />
-                </span>
+            <li className="flex items-center hover:border-slate-400 pl-4 hover:border-l">
+              <Link className="font-medium text-sm group" href="#widening">
                 <span className="group-hover:text-title block text-lg lg:text-xl transform transition-transform group-hover:translate-x-[3px] ease-in-out">
                   Type widening
                 </span>
               </Link>
             </li>
-            <li>
+            <li className="flex items-center hover:border-slate-400 pl-4 hover:border-l">
               <Link
-                className="flex items-start space-x-2 pt-3 font-medium text-sm group"
+                className="font-medium text-sm group"
                 href="#practical-examples"
               >
-                <span className="group-hover:text-title block">
-                  <ArrowRightIcon className="w-4 lg:w-6 h-4 lg:h-6 fill-slate-400" />
-                </span>
                 <span className="group-hover:text-title block text-lg lg:text-xl transform transition-transform group-hover:translate-x-[3px] ease-in-out">
                   Narrowing e widening na prática
+                </span>
+              </Link>
+            </li>
+            <li className="flex items-center hover:border-slate-400 pl-4 hover:border-l">
+              <Link
+                className="font-medium text-sm hover:underline hover:underline-offset-4 group"
+                href="https://www.typescriptlang.org/play/#code/PTAEDMFcDsGMBcCWB7aoAmyDKyC2BTeAC0WgHMAKANwEMAbSfALlAGd4AnUs0AH1GiRcAI3wc+oYcmR18NaAEpQAbwBQIUAEgOhSBzS0G+AHTxkAVQAOlsQGEarfBQXqwAX1WeNUOElQZsPEIScmp6RhZ2LnIJQRExCSkZOUUVV1AMxHAKeABPG2RwUENGUABeCtAAIijuKqU1DQzmnXg9A3CTMysbDntHZ3SMjybQVvbQAHIAOQBj5AhkRFBLZFZWAFuqfDpQWFRtjngEyxoOGlBIazFYB3xJ9I8vMH3odlB8SHLq+m3WKueoFk8A+XzKPzofwBgOBoMinG4iWksnk3yqv3w-0Bn2+nEYniAA"
+              >
+                <span className="group-hover:text-title block text-lg lg:text-xl transform transition-transform group-hover:translate-x-[3px] ease-in-out">
+                  Playground com os exemplos
                 </span>
               </Link>
             </li>

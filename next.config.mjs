@@ -3,7 +3,7 @@ import rehypePrettyCode from "rehype-pretty-code";
 
 /** @type {import('rehype-pretty-code').Options} */
 const options = {
-  theme: "dracula-soft",
+  theme: "poimandres",
   keepBackground: false,
   defaultLang: "typescript",
 };

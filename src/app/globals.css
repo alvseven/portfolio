@@ -13,8 +13,13 @@
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
   font-family: var(--font-montserrat);
   scroll-behavior: smooth;
+
+  @media (min-width: 768px) {
+    scroll-padding-top: 86px;
+  }
 }
 
 body {
@@ -48,6 +53,7 @@ p {
 pre {
   overflow-x: auto;
   padding: 1rem 0;
+  font-size: 1.5rem;
 }
 
 pre [data-line] {
