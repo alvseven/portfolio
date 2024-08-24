@@ -18,7 +18,7 @@ export const Header = () => {
       </Link>
       <nav>
         <ul className="flex items-center">
-          {!isBasePath && (
+          {/* {!isBasePath && (
             <li>
               <button
                 onClick={() => {
@@ -28,7 +28,7 @@ export const Header = () => {
                 <ArrowGoBackIcon className="w-6 h-6" />
               </button>
             </li>
-          )}
+          )} */}
         </ul>
       </nav>
     </header>

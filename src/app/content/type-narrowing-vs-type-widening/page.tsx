@@ -184,14 +184,14 @@ export default async function Home() {
           <ul className="flex flex-col gap-6 py-4 w-full">
             <li className="flex items-center hover:border-slate-400 pl-4 hover:border-l">
               <Link className="font-medium text-sm group" href="#narrowing">
-                <span className="group-hover:text-title transform transition-transform group-hover:translate-x-[3px] bloc ease-in-out">
-                  Type narrowing
+                <span className="group-hover:text-title block lg:text-lg transform transition-transform group-hover:translate-x-[3px] ease-in-out">
+                  Type Narrowing
                 </span>
               </Link>
             </li>
             <li className="flex items-center hover:border-slate-400 pl-4 hover:border-l">
               <Link className="font-medium text-sm group" href="#widening">
-                <span className="group-hover:text-title block text-lg transform transition-transform group-hover:translate-x-[3px] ease-in-out">
+                <span className="group-hover:text-title block lg:text-lg transform transition-transform group-hover:translate-x-[3px] ease-in-out">
                   Type widening
                 </span>
               </Link>
@@ -201,7 +201,7 @@ export default async function Home() {
                 className="font-medium text-sm group"
                 href="#practical-examples"
               >
-                <span className="group-hover:text-title block text-lg transform transition-transform group-hover:translate-x-[3px] ease-in-out">
+                <span className="group-hover:text-title block lg:text-lg transform transition-transform group-hover:translate-x-[3px] ease-in-out">
                   Narrowing e widening na prática
                 </span>
               </Link>
@@ -211,7 +211,7 @@ export default async function Home() {
                 className="font-medium text-sm group"
                 href="#let-type-inference"
               >
-                <span className="group-hover:text-title block text-lg transform transition-transform group-hover:translate-x-[3px] ease-in-out">
+                <span className="group-hover:text-title block lg:text-lg transform transition-transform group-hover:translate-x-[3px] ease-in-out">
                   Inferência de tipos em variáveis declaradas com
                   &quot;let&quot;
                 </span>
@@ -223,7 +223,7 @@ export default async function Home() {
                 href="https://www.typescriptlang.org/play/#code/PTAEDMFcDsGMBcCWB7aoAmyDKyC2BTeAC0WgHMAKANwEMAbSfALlAGd4AnUs0AH1GiRcAI3wc+oYcmR18NaAEpQAbwBQIUAEgOhSBzS0G+AHTxkAVQAOlsQGEarfBQXqwAX1WeNUOElQZsPEIScmp6RhZ2LnIJQRExCSkZOUUVV1AMxHAKeABPG2RwUENGUABeCtAAIijuKqU1DQzmnXg9A3CTMysbDntHZ3SMjybQVvbQAHIAOQBj5AhkRFBLZFZWAFuqfDpQWFRtjngEyxoOGlBIazFYB3xJ9I8vMH3odlB8SHLq+m3WKueoFk8A+XzKPzofwBgOBoMinG4iWksnk3yqv3w-0Bn2+nEYniAA"
                 target="_blank"
               >
-                <span className="group-hover:text-title block text-lg transform transition-transform group-hover:translate-x-[3px] ease-in-out">
+                <span className="group-hover:text-title block lg:text-lg transform transition-transform group-hover:translate-x-[3px] ease-in-out">
                   Playground com os exemplos
                   <ExternalRedirectIcon className="lg:inline hidden pl-2" />
                 </span>
