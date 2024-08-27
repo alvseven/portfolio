@@ -17,7 +17,9 @@ export function Article({ title, source, url }: ArticleProps) {
       <TypescriptIcon className="md:block hidden w-6 h-6" />
       <Link
         href={url}
-        target="_blank"
+        target={
+          source === "Twitter" || source === "Medium" ? "_blank" : "_self"
+        }
         className="hover:underline hover:underline-offset-2"
       >
         {title}
