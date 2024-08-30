@@ -4,10 +4,10 @@
 
 :root {
   --background: 222 47% 11%;
-  --text-primary: 215 20% 65%;
-  --text-title: 210 40% 96%;
-  --text-title-secondary: 213 27% 84%;
-  --text-highlight: 214 32% 91%;
+  --text-primary: 213 27% 84%;
+  --text-title: 210 40% 98%;
+  --text-title-secondary: 214 32% 91%;
+  --text-highlight: 210 40% 96%;
 }
 
 html {
