@@ -218,7 +218,7 @@ export default async function Home() {
             <li className="flex items-center hover:border-slate-400 pl-4 hover:border-l">
               <Link
                 className="font-medium text-sm underline underline-offset-4 group"
-                href="https://www.typescriptlang.org/play/#code/PTAEDMFcDsGMBcCWB7aoAmyDKyC2BTeAC0WgHMAKANwEMAbSfALlAGd4AnUs0AH1GiRcAI3wc+oYcmR18NaAEpQAbwBQIUAEgOhSBzS0G+AHTxkAVQAOlsQGEarfBQXqwAX1WeNUOElQZsPEIScmp6RhZ2LnIJQRExCSkZOUUVV1AMxHAKeABPG2RwUENGUABeCtAAIijuKqU1DQzmnXg9A3CTMysbDntHZ3SMjybQVvbQAHIAOQBj5AhkRFBLZFZWAFuqfDpQWFRtjngEyxoOGlBIazFYB3xJ9I8vMH3odlB8SHLq+m3WKueoFk8A+XzKPzofwBgOBoMinG4iWksnk3yqv3w-0Bn2+nEYniAA"
+                href="https://www.typescriptlang.org/play/?#code/PTAEDMFcDsGMBcCWB7aoAmyDKyC2BTeAC0WgHMAKANwEMAbSfALlAGd4AnUs0AH1GiRcAI3wcAlKADeAKBCgAkB0KQOaWg3wA6eMgCqABwNiAwjVb4K4uWAC+Mh-KhwkqDNjyES5avUYt2LnI+ASFRCWkbUGjEcAp4AE9jZHBQDUZQAF5s0AAiQO5cyVl5aLLleFV1P21dQ2MOMwsrKOj7UtAKqtAAcgA5AGPkCGREUANkVlYAW6p8OlBYVDmOeDFxmg4aUEgjMVhzfB6o+0cwJeh2NJqsvIB2XLPQOkJrzVvch4col-g3-zYnG4IUEInWmXujyi6XwtzuDiAA"
                 target="_blank"
               >
                 <span className="group-hover:text-title block lg:text-lg transform transition-transform group-hover:translate-x-[3px] ease-in-out">
