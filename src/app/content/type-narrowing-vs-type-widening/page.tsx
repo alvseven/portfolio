@@ -19,10 +19,8 @@ export default async function Home() {
           <Intro className="rounded-3xl" />
           <p>
             Cansado de ouvir os termos
-            <span className="px-1 md:px-2 text-highlight">
-              type narrowing
-            </span>{" "}
-            e<span className="px-1 md:px-2 text-highlight">type widening</span>{" "}
+            <span className="px-1 md:px-2 text-highlight">type narrowing</span>e
+            <span className="px-1 md:px-2 text-highlight">type widening</span>
             sem entender bem o que significam? Neste artigo, você compreenderá
             esses importantes conceitos e verá exemplos práticos de cada caso.
           </p>
@@ -88,7 +86,7 @@ export default async function Home() {
 
           <p>
             Vejamos este exemplo: temos uma função que recebe um parâmetro que
-            pode ser uma string, um número ou um booleano.
+            pode ser uma string ou um número.
           </p>
 
           <NarrowingExample />
@@ -97,7 +95,7 @@ export default async function Home() {
             Se usássemos métodos de string em um número, teríamos um erro em
             runtime. O que precisamos aqui é reduzir o conjunto de
             possibilidades. Só iremos usar um método de string se esse parâmetro
-            for uma string, tornando o código seguro. Precisamos fazer{" "}
+            for uma string, tornando o código seguro. Precisamos fazer
             <span className="pl-1 text-highlight">type narrowing</span>.
           </p>
 
@@ -105,10 +103,10 @@ export default async function Home() {
 
           <p>
             Agora, vamos entender o que é type widening. Observe este outro
-            exemplo: declaramos uma variável com o valor &quot;alves&quot;
-            usando a keyword const. Após isso, podemos observar um comportamento
+            exemplo: declaramos uma variável com o valor &quot;7&quot; usando a
+            keyword const. Após isso, podemos observar um comportamento
             interessante: o typescript inferiu que o tipo dessa variável é
-            exatamente &quot;alves&quot;.
+            exatamente &quot;7&quot;.
           </p>
 
           <ConstExample />
@@ -116,13 +114,13 @@ export default async function Home() {
           <p>
             Se pararmos para analisar, faz sentido, não? Variáveis declaradas
             com const não podem ter seu valor reatribuído. Esse valor nunca vai
-            mudar, então foi possível inferir &quot;alves&quot;.
+            mudar, então foi possível inferir &quot;7&quot;.
           </p>
           <p>
             Mas quando declaramos a variável com let, o typescript não infere o
-            tipo exatamente como &quot;alves&quot;. Em vez disso, ele infere o
-            tipo como string. E novamente, faz sentido, não? Podemos reatribuir
-            o valor de uma variável declarada com let.
+            tipo exatamente como &quot;7&quot;. Em vez disso, ele infere o tipo
+            como string. E novamente, faz sentido, não? Podemos reatribuir o
+            valor de uma variável declarada com let.
           </p>
 
           <LetExample />
@@ -154,7 +152,7 @@ export default async function Home() {
           <p>
             Se você realmente quer que seja qualquer coisa, e que possa
             reatribuir o valor da sua variável que antes era uma string para um
-            valor booleano, por exemplo, você precisa explicitamente declarar os
+            número, por exemplo, você precisa explicitamente declarar os
             possíveis tipos da variável.
           </p>
 
@@ -163,7 +161,7 @@ export default async function Home() {
           <p>
             Com isso, chegamos ao fim deste artigo. Espero que tenha ficado
             claro o que significa cada termo e como isso é aplicado no
-            typescript. Compartilhe este artigo se ele foi útil, até uma próxima{" "}
+            typescript. Compartilhe este artigo se ele foi útil, até uma próxima
             {`${":)"}`}
           </p>
 
