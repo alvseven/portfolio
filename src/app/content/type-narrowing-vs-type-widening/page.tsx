@@ -7,8 +7,24 @@ import ConstExample from "./mdx/const-example.mdx";
 import LetExample from "./mdx/let-example.mdx";
 import LetExampleFix from "./mdx/let-example-fix.mdx";
 import { ExternalRedirectIcon } from "@/app/shared/components/icons/external-redirect";
+import { AsideNavigationMenu } from "../(components)/aside-navigation-menu";
 
 export default async function Home() {
+  const navigationItems = [
+    { href: "#narrowing", title: "Type Narrowing" },
+    { href: "#widening", title: "Type Widening" },
+    { href: "#practical-examples", title: "Narrowing e widening na prática" },
+    {
+      href: "#let-type-inference",
+      title: 'Inferência de tipos em variáveis declaradas com "let"',
+    },
+    {
+      href: "https://www.typescriptlang.org/play/?#code/PTAEDMFcDsGMBcCWB7aoAmyDKyC2BTeAC0WgHMAKANwEMAbSfALlAGd4AnUs0AH1GiRcAI3wcAlKADeAKBCgAkB0KQOaWg3wA6eMgCqABwNiAwjVb4K4uWAC+Mh-KhwkqDNjyES5avUYt2LnI+ASFRCWkbUGjEcAp4AE9jZHBQDUZQAF5s0AAiQO5cyVl5aLLleFV1P21dQ2MOMwsrKOj7UtAKqtAAcgA5AGPkCGREUANkVlYAW6p8OlBYVDmOeDFxmg4aUEgjMVhzfB6o+0cwJeh2NJqsvIB2XLPQOkJrzVvch4col-g3-zYnG4IUEInWmXujyi6XwtzuDiAA",
+      title: "Playground com os exemplos",
+      withExternalRedirect: true,
+    },
+  ];
+
   return (
     <>
       <main className="flex col-span-12 sm:col-span-9 py-8">
@@ -56,7 +72,7 @@ export default async function Home() {
             é<span className="pl-1 text-highlight">narrowing</span>.
           </p>
 
-          <h4 className="opacity-100 my-4 text-xl lg:text-2xl" id="narrowing">
+          <h4 className="opacity-100 my-4 text-xl lg:text-2xl" id="widening">
             Type Widening
           </h4>
 
@@ -80,7 +96,10 @@ export default async function Home() {
             é <span className="pl-1 text-highlight">widening</span>.
           </p>
 
-          <h4 className="opacity-100 my-4 text-xl lg:text-2xl" id="narrowing">
+          <h4
+            className="opacity-100 my-4 text-xl lg:text-2xl"
+            id="practical-examples"
+          >
             Narrowing e Widening na prática
           </h4>
 
@@ -177,59 +196,7 @@ export default async function Home() {
           </Link>
         </article>
       </main>
-      <aside className="md:block hidden mt-8 lg:ml-4 px-4 py-2 min-w-fit lg:min-w-[18rem] font-sans text-xl">
-        <div className="md:block top-24 sticky border-slate-600 hidden pr-8 border-l border-l-double">
-          <ul className="flex flex-col gap-6 py-4 w-full">
-            <li className="flex items-center hover:border-slate-400 pl-4 hover:border-l">
-              <Link className="font-medium text-sm group" href="#narrowing">
-                <span className="group-hover:text-title block lg:text-lg transform transition-transform group-hover:translate-x-[3px] ease-in-out">
-                  Type Narrowing
-                </span>
-              </Link>
-            </li>
-            <li className="flex items-center hover:border-slate-400 pl-4 hover:border-l">
-              <Link className="font-medium text-sm group" href="#widening">
-                <span className="group-hover:text-title block lg:text-lg transform transition-transform group-hover:translate-x-[3px] ease-in-out">
-                  Type widening
-                </span>
-              </Link>
-            </li>
-            <li className="flex items-center hover:border-slate-400 pl-4 hover:border-l">
-              <Link
-                className="font-medium text-sm group"
-                href="#practical-examples"
-              >
-                <span className="group-hover:text-title block lg:text-lg transform transition-transform group-hover:translate-x-[3px] ease-in-out">
-                  Narrowing e widening na prática
-                </span>
-              </Link>
-            </li>
-            <li className="flex items-center hover:border-slate-400 pl-4 hover:border-l">
-              <Link
-                className="font-medium text-sm group"
-                href="#let-type-inference"
-              >
-                <span className="group-hover:text-title block lg:text-lg transform transition-transform group-hover:translate-x-[3px] ease-in-out">
-                  Inferência de tipos em variáveis declaradas com
-                  &quot;let&quot;
-                </span>
-              </Link>
-            </li>
-            <li className="flex items-center hover:border-slate-400 pl-4 hover:border-l">
-              <Link
-                className="font-medium text-sm underline underline-offset-4 group"
-                href="https://www.typescriptlang.org/play/?#code/PTAEDMFcDsGMBcCWB7aoAmyDKyC2BTeAC0WgHMAKANwEMAbSfALlAGd4AnUs0AH1GiRcAI3wcAlKADeAKBCgAkB0KQOaWg3wA6eMgCqABwNiAwjVb4K4uWAC+Mh-KhwkqDNjyES5avUYt2LnI+ASFRCWkbUGjEcAp4AE9jZHBQDUZQAF5s0AAiQO5cyVl5aLLleFV1P21dQ2MOMwsrKOj7UtAKqtAAcgA5AGPkCGREUANkVlYAW6p8OlBYVDmOeDFxmg4aUEgjMVhzfB6o+0cwJeh2NJqsvIB2XLPQOkJrzVvch4col-g3-zYnG4IUEInWmXujyi6XwtzuDiAA"
-                target="_blank"
-              >
-                <span className="group-hover:text-title block lg:text-lg transform transition-transform group-hover:translate-x-[3px] ease-in-out">
-                  Playground com os exemplos
-                  <ExternalRedirectIcon className="lg:inline hidden pl-2" />
-                </span>
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </aside>
+      <AsideNavigationMenu navigationItems={navigationItems} />
     </>
   );
 }
