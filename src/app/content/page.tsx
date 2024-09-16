@@ -11,7 +11,7 @@ export default async function Home() {
     },
     {
       id: 2,
-      title: "Homomorphic and isomorphic mapped types",
+      title: "Homomorphic and non homomorphic mapped types",
       url: "https://x.com/typescripting/status/1749839845348737123",
       source: "Twitter",
     },
