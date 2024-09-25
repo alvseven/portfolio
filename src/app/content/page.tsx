@@ -1,4 +1,5 @@
 import type { ComponentProps } from "react";
+
 import { Article } from "./(components)/article";
 
 export default async function Home() {

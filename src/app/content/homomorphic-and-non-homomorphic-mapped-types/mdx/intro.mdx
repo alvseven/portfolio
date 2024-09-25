@@ -1,0 +1,8 @@
+```typescript
+type User = {
+  readonly name: string
+  age?: number
+}
+
+type Mapped = { [Key in keyof User]: User[Key] } 
+```

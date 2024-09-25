@@ -1,4 +1,5 @@
 import Link from "next/link";
+
 import InclusiveRange from "./mdx/inclusive-range.mdx";
 
 export default async function Home() {

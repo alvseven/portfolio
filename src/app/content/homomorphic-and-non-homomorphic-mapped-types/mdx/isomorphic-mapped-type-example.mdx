@@ -1,0 +1,20 @@
+```typescript
+type User = {
+  readonly name: string
+  age?: number
+}
+
+type UserKeys = keyof User // "name" | "age"
+
+type NonHomomorphic = { [Key in UserKeys]: User[Key] } 
+
+  // aqui o compilador não consegue estabelecer
+  // esse vínculo, o que ele enxerga é apenas 
+  // a union "name" | "age", sendo assim, os 
+  // modificadores não são mantidos
+
+  // {
+  //   name: string;
+  //   age: number | undefined;
+  // }
+```

@@ -1,0 +1,16 @@
+```typescript
+type User = {
+  readonly name: string
+  age?: number
+}
+
+type Homomorphic = { [Key in keyof User]: User[Key] } 
+
+  // o compilador consegue reconhecer as keys
+  // de User, e manter seus modificadores (readonly e ?)
+
+  // {
+  //  readonly name: string;
+  //  age?: number | undefined;
+  // }
+```
