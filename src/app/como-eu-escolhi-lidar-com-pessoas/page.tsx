@@ -80,10 +80,11 @@ export default async function Home() {
           </h4>
           <p>
             Foi difícil achar um bom termo pro que vou explicar agora, e já
-            adianto: é algo simples em teoria, mas é difícil na prática. Durante
-            todo esse tempo que venho tentando aplicar isso, por MUITAS vezes
-            tenho que me corrigir. E o motivo é óbvio: eu não era acostumado a
-            ser assim, não era assim que eu me comunicava.
+            adianto: é algo simples em teoria, mas difícil na prática{" "}
+            {"(pelo menos pra mim)"}. Durante todo esse tempo que venho tentando
+            aplicar isso, por MUITAS vezes tenho que me corrigir. E o motivo é
+            óbvio: eu não era acostumado a ser assim, não era assim que eu me
+            comunicava.
           </p>
           <p>
             A comunicação defensiva é um estilo de comunicação que busca evitar
