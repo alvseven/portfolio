@@ -28,9 +28,9 @@ export default async function Home() {
             Como eu escolhi lidar com pessoas
           </h1>
           <p>
-            Como vai você? Eu tenho estado bem, e hoje cá estou eu pra
+            Como vai você? Eu tenho estado bem, e hoje cá estou eu para
             compartilhar duas regrinhas que busco seguir, elas têm colaborado
-            pra minha saúde mental{"(e pra das pessoas ao meu redor também)"}.
+            pra minha saúde mental {"(e pra das pessoas ao meu redor também)"}.
             Eu precisava escrever sobre elas, é algo muito importante e vai de
             encontro com quem eu quero ser, se trata de como eu escolhi lidar
             com as pessoas, as regras são muito simples:
