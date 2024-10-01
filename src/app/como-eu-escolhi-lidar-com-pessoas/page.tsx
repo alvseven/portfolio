@@ -34,14 +34,10 @@ export default async function Home() {
             Eu precisava escrever sobre elas, é algo muito importante e vai de
             encontro com quem eu quero ser, se trata de como eu escolhi lidar
             com as pessoas, as regras são muito simples:
-            <span className="px-px md:px-1 text-highlight">
+            <span className="px-1 text-highlight">
               presunção de boa intenção
             </span>
-            e
-            <span className="pl-px md:pl-1 text-highlight">
-              comunicação defensiva
-            </span>
-            .
+            e<span className="pl-1 text-highlight">comunicação defensiva</span>.
           </p>
           <h4
             className="opacity-100 my-4 text-xl lg:text-2xl"
@@ -104,7 +100,7 @@ export default async function Home() {
                 <span className="text-primary pl-1">
                   utilize uma comunicação que minimize confronto e promova o
                   diálogo. Em vez de afirmar &quot;Isso não é uma boa
-                  abordagem&quot;, você pode dizer: &quot;eu vejo algumas
+                  abordagem&quot;, você pode dizer: &quot;Eu vejo algumas
                   dificuldades nessa abordagem, talvez não seja uma boa ideia,
                   bora discutir isso?&quot;. Palavras como &quot;talvez&quot;,
                   &quot;possivelmente&quot; ou frases como &quot;pode ser
@@ -134,9 +130,9 @@ export default async function Home() {
                   evite certezas e busque partir do pressuposto de que você pode
                   estar errado, independentemente de quão seguro esteja de sua
                   posição. É mais seguro fazer perguntas do que fazer
-                  afirmações. Em vez de dizer &quot;você está errado&quot;,
-                  tente reformular sua abordagem: &quot;acredito que não seja
-                  bem assim, poderia me explicar seu ponto de vista?&quot;, essa
+                  afirmações. Em vez de dizer &quot;Você está errado&quot;,
+                  tente reformular sua abordagem: &quot;Acredito que não seja
+                  bem assim, poderia me explicar seu ponto de vista?&quot;. Essa
                   mudança é convidativa, respeitosa e abre espaço para um
                   diálogo.
                 </span>
@@ -158,19 +154,17 @@ export default async function Home() {
           </p>
           <p>
             Curiosamente,
-            <span className="px-px md:px-1 text-highlight">
+            <span className="px-1 text-highlight">
               presunção de boa intenção
             </span>
             é algo que você deve fazer principalmente com quem é mais próximo a
             você, não faz o menor sentido assumir algo negativo de alguém que
-            lhe ama, enquanto isso, o contrário vale para
-            <span className="pl-px md:pl-1 text-highlight">
-              a comunicação defensiva
-            </span>
-            , deve ser feita principalmente com pessoas menos próximas,
+            lhe ama. Enquanto isso, o contrário vale para a
+            <span className="pl-1 text-highlight">comunicação defensiva</span>,
+            que deve ser utilizada principalmente com pessoas menos próximas,
             justamente falando com estranhos que devemos usar as melhores
-            palavras possíveis, ainda não conhecemos a pessoa, não sabemos como
-            ela vai reagir.
+            palavras possíveis, pois ainda não conhecemos a pessoa, não sabemos
+            como ela vai reagir.
           </p>
         </article>
       </main>
