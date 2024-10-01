@@ -80,11 +80,11 @@ export default async function Home() {
           </h4>
           <p>
             Foi difícil achar um bom termo pro que vou explicar agora, e já
-            adianto: é algo simples em teoria, mas difícil na prática{" "}
-            {"(pelo menos pra mim)"}. Durante todo esse tempo que venho tentando
-            aplicar isso, por MUITAS vezes tenho que me corrigir. E o motivo é
-            óbvio: eu não era acostumado a ser assim, não era assim que eu me
-            comunicava.
+            adianto: é algo simples em teoria, mas difícil na prática
+            {" (pelo menos tem sido pra mim)"}. Durante todo esse tempo que
+            venho tentando aplicar isso, por MUITAS vezes tenho que me corrigir.
+            E o motivo é óbvio: eu não era acostumado a ser assim, não era assim
+            que eu me comunicava.
           </p>
           <p>
             A comunicação defensiva é um estilo de comunicação que busca evitar
@@ -159,8 +159,8 @@ export default async function Home() {
               presunção de boa intenção
             </span>
             é algo que você deve fazer principalmente com quem é mais próximo a
-            você, não faz o menor sentido assumir algo negativo de alguém que
-            lhe ama. Enquanto isso, o contrário vale para a
+            você, não faz o menor sentido primeiramente assumir algo negativo de
+            alguém que lhe ama. Enquanto isso, o contrário vale para a
             <span className="pl-1 text-highlight">comunicação defensiva</span>,
             que deve ser utilizada principalmente com pessoas menos próximas,
             justamente falando com estranhos que devemos usar as melhores
