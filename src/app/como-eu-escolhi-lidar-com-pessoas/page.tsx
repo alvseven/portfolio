@@ -167,9 +167,10 @@ export default async function Home() {
             <span className="pl-px md:pl-1 text-highlight">
               a comunicação defensiva
             </span>
-            , justamente falando com estranhos que devemos usar as melhores
-            palavras possíveis, não conhecemos o outro, não sabemos como ele vai
-            reagir.
+            , deve ser feita principalmente com pessoas menos próximas,
+            justamente falando com estranhos que devemos usar as melhores
+            palavras possíveis, ainda não conhecemos a pessoa, não sabemos como
+            ela vai reagir.
           </p>
         </article>
       </main>
