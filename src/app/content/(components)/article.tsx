@@ -1,9 +1,9 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 
-import { TypescriptIcon } from "@/app/shared/components/icons/typescript";
-import { TwitterIcon } from "@/app/shared/components/icons/twitter";
-import { MediumIcon } from "@/app/shared/components/icons/medium-icon";
+import { TypescriptIcon } from "@/app/(shared)/components/icons/typescript";
+import { TwitterIcon } from "@/app/(shared)/components/icons/twitter";
+import { MediumIcon } from "@/app/(shared)/components/icons/medium-icon";
 
 export type ArticleProps = {
   id?: number;

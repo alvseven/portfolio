@@ -7,7 +7,7 @@ import IsomorphicMappedTypeExample from "./mdx/isomorphic-mapped-type-example.md
 
 import { AsideNavigationMenu } from "../(components)/aside-navigation-menu";
 
-import { ExternalRedirectIcon } from "@/app/shared/components/icons/external-redirect";
+import { ExternalRedirectIcon } from "@/app/(shared)/components/icons/external-redirect";
 
 export default async function Home() {
   const navigationItems: ComponentProps<

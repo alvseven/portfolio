@@ -1,7 +1,7 @@
 import type { ComponentProps } from "react";
 
 import { Article } from "./(components)/article";
-import { BrainIcon } from "../shared/components/icons/brain";
+import { BrainIcon } from "../(shared)/components/icons/brain";
 
 export default async function Home() {
   const articles: Array<ComponentProps<typeof Article>> = [

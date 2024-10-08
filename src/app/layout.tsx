@@ -4,8 +4,8 @@ import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 
 import { Barlow_Condensed, Fira_Code, Montserrat } from "next/font/google";
-import { Footer } from "./shared/components/ui/footer";
-import { Header } from "./shared/components/ui/header";
+import { Footer } from "./(shared)/components/ui/footer";
+import { Header } from "./(shared)/components/ui/header";
 
 const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],

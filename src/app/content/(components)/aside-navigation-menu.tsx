@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { ExternalRedirectIcon } from "@/app/shared/components/icons/external-redirect";
+import { ExternalRedirectIcon } from "@/app/(shared)/components/icons/external-redirect";
 
 type NavigationItem = {
   href: string;

@@ -6,7 +6,7 @@ import NarrowingExampleFix from "./mdx/narrowing-example-fix.mdx";
 import ConstExample from "./mdx/const-example.mdx";
 import LetExample from "./mdx/let-example.mdx";
 import LetExampleFix from "./mdx/let-example-fix.mdx";
-import { ExternalRedirectIcon } from "@/app/shared/components/icons/external-redirect";
+import { ExternalRedirectIcon } from "@/app/(shared)/components/icons/external-redirect";
 import { AsideNavigationMenu } from "../(components)/aside-navigation-menu";
 
 export default async function Home() {
