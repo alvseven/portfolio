@@ -22,7 +22,7 @@ export default function Home() {
     {
       id: 2,
       title: "Type narrowing vs type widening",
-      url: "/content/type-narrowing-vs-type-widening",
+      url: "/type-narrowing-vs-type-widening",
       source: "Blog",
     },
     {

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: "Homomorphic Mapped Types",
     description:
       "Aprenda sobre os conceitos de homomorphic mapped types no TypeScript com explicações simples e exemplos práticos.",
-    url: "https://www.alvseven.com/content/homomorphic-mapped-types",
+    url: "https://www.alvseven.com/homomorphic-mapped-types",
     type: "article",
   },
   twitter: {

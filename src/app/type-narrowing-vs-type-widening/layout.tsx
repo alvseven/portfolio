@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: "Type Narrowing vs Type Widening",
     description:
       "Aprenda sobre os conceitos de Type Narrowing e Type Widening no TypeScript com explicações simples e exemplos práticos.",
-    url: "https://www.alvseven.com/content/type-narrowing-vs-type-widening",
+    url: "https://www.alvseven.com/type-narrowing-vs-type-widening",
     type: "article",
   },
   twitter: {
