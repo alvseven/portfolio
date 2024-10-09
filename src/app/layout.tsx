@@ -28,7 +28,7 @@ const firaCode = Fira_Code({
 
 export const metadata: Metadata = {
   title: "Alves blog",
-  description: "All my articles, courses, etc ",
+  description: "Todos os meus artigos",
 };
 
 export default function RootLayout({
