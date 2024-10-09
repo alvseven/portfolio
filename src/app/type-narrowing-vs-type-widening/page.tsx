@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { ComponentProps } from "react";
 
 import Intro from "./mdx/intro.mdx";
 import NarrowingExample from "./mdx/narrowing-example.mdx";
@@ -7,10 +8,12 @@ import ConstExample from "./mdx/const-example.mdx";
 import LetExample from "./mdx/let-example.mdx";
 import LetExampleFix from "./mdx/let-example-fix.mdx";
 import { ExternalRedirectIcon } from "@/app/(shared)/components/icons/external-redirect";
-import { AsideNavigationMenu } from "../(components)/aside-navigation-menu";
+import { AsideNavigationMenu } from "../(shared)/components/ui/aside-navigation-menu";
 
 export default async function Home() {
-  const navigationItems = [
+  const navigationItems: ComponentProps<
+    typeof AsideNavigationMenu
+  >["navigationItems"] = [
     { href: "#narrowing", title: "Type Narrowing" },
     { href: "#widening", title: "Type Widening" },
     { href: "#practical-examples", title: "Narrowing e widening na prática" },

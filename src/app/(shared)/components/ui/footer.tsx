@@ -9,7 +9,7 @@ import AlvesSignature from "@/../public/images/alves-signature.png";
 
 export const Footer = () => {
   return (
-    <footer className="border-slate-800 bg-background py-8 border-t border-double">
+    <footer className="border-slate-800 bg-background py-4 border-t border-double">
       <div className="flex sm:flex-row flex-col items-center gap-8 sm:gap-0 px-8 lg:px-12">
         <div className="flex-1">
           <Image

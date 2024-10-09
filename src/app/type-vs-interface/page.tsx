@@ -3,49 +3,55 @@ import type { ComponentProps } from "react";
 
 import AliasedTypeCannotBeAnObjectLiteral from "./mdx/aliased-type-cannot-be-an-object-literal.mdx";
 
-import { AsideNavigationMenu } from "../content/(components)/aside-navigation-menu";
+import { AsideNavigationMenu } from "../(shared)/components/ui/aside-navigation-menu";
 
 export default async function Home() {
   const navigationItems: ComponentProps<
     typeof AsideNavigationMenu
   >["navigationItems"] = [
     {
-      href: "#consideracoes",
-      title: "Hover em interface vs em type",
+      href: "#o-comeco-de-tudo",
+      title: "O começo de tudo",
     },
     {
-      href: "#consideracoes",
-      title: "Interfaces só podem definir objetos",
+      href: "#hover-em-type-vs-em-interface",
+      title: "Hover em type vs em interface",
     },
     {
-      href: "#consideracoes",
-      title: "Interfaces não podem ser usadas para criar tipos derivados",
-    },
-    {
-      href: "#consideracoes",
+      href: "#interfaces-so-podem-definir-objetos-types-podem-definir-qualquer-tipo",
       title:
-        "Interfaces não podem estender unions, mesmo que seja uma union de objetos",
+        "Interfaces só podem definir objetos, types podem definir qualquer tipo",
     },
     {
-      href: "#consideracoes",
-      title: "Interfaces podem ser redeclaradas",
+      href: "#interfaces-podem-ser-redeclaradas-types-nao",
+      title: "Interfaces podem ser redeclaradas, types não",
+    },
+    {
+      href: "#interfaces-nao-podem-estender-uma-union-mesmo-que-seja-uma-union-de-objetos",
+      title:
+        "Interfaces não podem estender uma union, mesmo que seja uma union de objetos",
+    },
+    {
+      href: "#interfaces-nao-podem-ser-utilizadas-para-criar-tipos-derivados",
+      title: "Interfaces não podem ser utilizadas para criar tipos derivados",
+    },
+    {
+      href: "#interfaces-se-comportam-de-maneira-diferente-de-types-ao-compor-objetos",
+      title:
+        "Interfaces se comportam de maneira diferente de types ao compor objetos",
     },
     {
       href: "#types-tem-assinatura-implicita-de-indice",
       title: "Types têm assinatura implícita de índice",
     },
     {
-      href: "#consideracoes",
-      title: "Interfaces se comportam de maneira diferente ao compor objetos",
-    },
-    {
-      href: "#consideracoes",
-      title: "Interfaces tem melhor performance ao compor vários objetos",
-    },
-    {
-      href: "#consideracoes",
+      href: "#interfaces-tem-melhor-performance-do-que-types-ao-compor-varios-objetos",
       title:
-        "Interfaces tem 'this' e isso possibilita a criação de Higher Kinded Types",
+        "Interfaces têm melhor performance do que types ao compor vários objetos",
+    },
+    {
+      href: "#interfaces-tem-this-e-isso-possibilita-a-criacao-de-higher-kinded-types",
+      title: `Interfaces têm ${"this"} e isso possibilita a criação de Higher Kinded Types`,
     },
   ];
 
@@ -66,7 +72,7 @@ export default async function Home() {
           </p>
           <h4
             className="opacity-100 my-4 text-xl lg:text-2xl"
-            id="hover-em-interface-vs-em-type"
+            id="o-comeco-de-tudo"
           >
             O começo de tudo
           </h4>
@@ -129,7 +135,6 @@ export default async function Home() {
           </p>
 
           <p>
-            {" "}
             Aliás, aqui está a&nbsp;
             <Link
               href="https://github.com/microsoft/TypeScript/pull/957"
@@ -177,7 +182,7 @@ export default async function Home() {
 
           <h4
             className="opacity-100 my-4 text-xl lg:text-2xl"
-            id="hover-em-interface-vs-em-type"
+            id="hover-em-type-vs-em-interface"
           >
             Hover em interface vs em type
           </h4>
@@ -187,12 +192,25 @@ export default async function Home() {
             Repudiandae cum eligendi, inventore officia dolor suscipit natus,
             repellendus, doloremque voluptatem qui cumque voluptas!
           </p>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis
+            recusandae accusamus explicabo facilis reprehenderit velit nihil!
+            Repudiandae cum eligendi, inventore officia dolor suscipit natus,
+            repellendus, doloremque voluptatem qui cumque voluptas!
+          </p>
           <h4
             className="opacity-100 my-4 text-xl lg:text-2xl"
-            id="interfaces-so-podem-definir-objetos"
+            id="interfaces-so-podem-definir-objetos-types-podem-definir-qualquer-tipo"
           >
-            Interfaces só podem definir objetos
+            Interfaces só podem definir objetos, types podem definir qualquer
+            tipo
           </h4>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam
+            culpa dolor obcaecati id maiores architecto ad provident facere
+            quod, officiis, qui rerum inventore eos quos sint sequi ducimus.
+            Voluptate, sint.
+          </p>
           <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam
             culpa dolor obcaecati id maiores architecto ad provident facere
@@ -201,9 +219,9 @@ export default async function Home() {
           </p>
           <h4
             className="opacity-100 my-4 text-xl lg:text-2xl"
-            id="interfaces-podem-ser-redeclaradas"
+            id="interfaces-podem-ser-redeclaradas-types-nao"
           >
-            Interfaces podem ser redeclaradas
+            Interfaces podem ser redeclaradas, types não
           </h4>
           <p>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis
@@ -211,12 +229,66 @@ export default async function Home() {
             asperiores. Et temporibus commodi error consectetur eligendi placeat
             nisi. Quibusdam.
           </p>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis
+            quasi in recusandae fuga doloremque vero, ex beatae odio culpa harum
+            asperiores. Et temporibus commodi error consectetur eligendi placeat
+            nisi. Quibusdam.
+          </p>
+
           <h4
             className="opacity-100 my-4 text-xl lg:text-2xl"
-            id="interfaces-nao-podem-ser-usadas-para-criar-tipos-derivados"
+            id="interfaces-nao-podem-estender-uma-union-mesmo-que-seja-uma-union-de-objetos"
           >
-            Interfaces não podem ser usadas para criar tipos derivados
+            Interfaces não podem estender uma union, mesmo que seja uma union de
+            objetos
           </h4>
+
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem quam
+            totam earum eum, ipsa veritatis odio minima amet enim unde accusamus
+            sequi voluptates sunt nostrum error deleniti ducimus voluptatibus
+            molestias?
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem quam
+            totam earum eum, ipsa veritatis odio minima amet enim unde accusamus
+            sequi voluptates sunt nostrum error deleniti ducimus voluptatibus
+            molestias?
+          </p>
+
+          <h4
+            className="opacity-100 my-4 text-xl lg:text-2xl"
+            id="interfaces-nao-podem-ser-utilizadas-para-criar-tipos-derivados"
+          >
+            Interfaces não podem ser utilizadas para criar tipos derivados
+          </h4>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto,
+            saepe magnam. Nesciunt dolores impedit fugiat, voluptate, laudantium
+            recusandae illum laboriosam qui tempore id sed, tenetur harum sequi
+            iste porro ipsam.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto,
+            saepe magnam. Nesciunt dolores impedit fugiat, voluptate, laudantium
+            recusandae illum laboriosam qui tempore id sed, tenetur harum sequi
+            iste porro ipsam.
+          </p>
+
+          <h4
+            className="opacity-100 my-4 text-xl lg:text-2xl"
+            id="interfaces-se-comportam-de-maneira-diferente-de-types-ao-compor-objetos"
+          >
+            Interfaces se comportam de maneira diferente de types ao compor
+            objetos
+          </h4>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto,
+            saepe magnam. Nesciunt dolores impedit fugiat, voluptate, laudantium
+            recusandae illum laboriosam qui tempore id sed, tenetur harum sequi
+            iste porro ipsam.
+          </p>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto,
             saepe magnam. Nesciunt dolores impedit fugiat, voluptate, laudantium
@@ -235,12 +307,6 @@ export default async function Home() {
             recusandae illum laboriosam qui tempore id sed, tenetur harum sequi
             iste porro ipsam.
           </p>
-          <h4
-            className="opacity-100 my-4 text-xl lg:text-2xl"
-            id="interface-se-comportam-de-maneira-diferente-ao-compor-objetos"
-          >
-            Interfaces se comportam de maneira diferente ao compor objetos
-          </h4>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto,
             saepe magnam. Nesciunt dolores impedit fugiat, voluptate, laudantium
@@ -249,10 +315,17 @@ export default async function Home() {
           </p>
           <h4
             className="opacity-100 my-4 text-xl lg:text-2xl"
-            id="interfaces-tem-melhor-performance-ao-compor-varios-objetos"
+            id="interfaces-tem-melhor-performance-do-que-types-ao-compor-varios-objetos"
           >
-            Interfaces tem melhor performance ao compor vários objetos
+            Interfaces têm melhor performance do que types ao compor vários
+            objetos
           </h4>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto,
+            saepe magnam. Nesciunt dolores impedit fugiat, voluptate, laudantium
+            recusandae illum laboriosam qui tempore id sed, tenetur harum sequi
+            iste porro ipsam.
+          </p>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto,
             saepe magnam. Nesciunt dolores impedit fugiat, voluptate, laudantium
@@ -261,11 +334,17 @@ export default async function Home() {
           </p>
           <h4
             className="opacity-100 my-4 text-xl lg:text-2xl"
-            id="interfaces-tem-this"
+            id="interfaces-tem-this-e-isso-possibilita-a-criacao-de-higher-kinded-types"
           >
-            Interfaces tem &quot;this&quot; e isso possibilita a criação de
+            Interfaces têm &quot;this&quot; e isso possibilita a criação de
             Higher Kinded Types
           </h4>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto,
+            saepe magnam. Nesciunt dolores impedit fugiat, voluptate, laudantium
+            recusandae illum laboriosam qui tempore id sed, tenetur harum sequi
+            iste porro ipsam.
+          </p>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto,
             saepe magnam. Nesciunt dolores impedit fugiat, voluptate, laudantium

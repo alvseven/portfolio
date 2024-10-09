@@ -5,7 +5,7 @@ import Intro from "./mdx/intro.mdx";
 import HomomorphicMappedTypeExample from "./mdx/homomorphic-mapped-type-example.mdx";
 import IsomorphicMappedTypeExample from "./mdx/isomorphic-mapped-type-example.mdx";
 
-import { AsideNavigationMenu } from "../(components)/aside-navigation-menu";
+import { AsideNavigationMenu } from "../(shared)/components/ui/aside-navigation-menu";
 
 import { ExternalRedirectIcon } from "@/app/(shared)/components/icons/external-redirect";
 
@@ -15,11 +15,11 @@ export default async function Home() {
   >["navigationItems"] = [
     {
       href: "#homomorphic-mapped-type",
-      title: "          O que é um homomorphic mapped type?",
+      title: "O que é um homomorphic mapped type?",
     },
     {
       href: "#non-homomorphic-mapped-type",
-      title: "          O que é um non homomorphic mapped type?",
+      title: "O que é um non homomorphic mapped type?",
     },
     {
       href: "https://www.typescriptlang.org/play/?#code/PTAEDMFcDsGMBcCWB7aoAmyDKyC2BTeAC0WgHMAKANwEMAbSfALlAGd4AnUs0AH1GiRcAI3wcAlKADeAKBCgAkB0KQOaWg3wA6eMgCqABwNiAwjVb4K4uWAC+Mh-KhwkqDNjyES5avUYt2LnI+ASFRCWkbUGjEcAp4AE9jZHBQDUZQAF5s0AAiQO5cyVl5aLLleFV1P21dQ2MOMwsrKOj7UtAKqtAAcgA5AGPkCGREUANkVlYAW6p8OlBYVDmOeDFxmg4aUEgjMVhzfB6o+0cwJeh2NJqsvIB2XLPQOkJrzVvch4col-g3-zYnG4IUEInWmXujyi6XwtzuDiAA",

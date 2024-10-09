@@ -1,6 +1,6 @@
 import type { ComponentProps } from "react";
 
-import { AsideNavigationMenu } from "../content/(components)/aside-navigation-menu";
+import { AsideNavigationMenu } from "../(shared)/components/ui/aside-navigation-menu";
 
 export default async function Home() {
   const navigationItems: ComponentProps<

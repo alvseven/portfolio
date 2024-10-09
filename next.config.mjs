@@ -20,6 +20,15 @@ const withMDX = nextMDX({
 const nextConfig = {
   reactStrictMode: true,
   pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
+  async redirects() {
+    return [
+      {
+        source: '/content/:slug*',
+        destination: '/:slug*',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default withMDX(nextConfig);
