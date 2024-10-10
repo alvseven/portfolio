@@ -8,7 +8,7 @@ export default function Home() {
   const articles: Array<ComponentProps<typeof Article>> = [
     {
       id: 0,
-      title: "Type vs interface",
+      title: "Type vs interface [WIP]",
       url: "/type-vs-interface",
       source: "Blog",
     },
