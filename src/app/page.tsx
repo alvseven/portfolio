@@ -82,7 +82,7 @@ export default function Home() {
   ];
 
   return (
-    <section className="flex  justify-center items-center m-auto w-full md:w-3/4 lg:w-2/4 min-h-[74.5vh]">
+    <section className="flex justify-center items-center m-auto w-full md:w-3/4 lg:w-2/4 min-h-[74.5vh]">
       <main className="flex flex-col justify-center items-center m-auto min-h-[78vh] font-sans">
         <section className="flex flex-col items-start gap-4 p-8">
           {articles.map((article) => (

@@ -3,15 +3,15 @@ import { Analytics } from "@vercel/analytics/react";
 
 import type { Metadata } from "next";
 
-import { Barlow_Condensed, Fira_Code, Montserrat } from "next/font/google";
+import { Sora, Fira_Code, Montserrat } from "next/font/google";
 import { Footer } from "./(shared)/components/ui/footer";
 import { Header } from "./(shared)/components/ui/header";
 
-const barlowCondensed = Barlow_Condensed({
+const sora = Sora({
   subsets: ["latin"],
   display: "swap",
   weight: "600",
-  variable: "--font-barlow-condensed",
+  variable: "--font-sora",
 });
 
 const montserrat = Montserrat({
@@ -39,7 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${montserrat.variable} ${barlowCondensed.variable} ${firaCode.variable}`}
+        className={`${montserrat.variable} ${sora.variable} ${firaCode.variable}`}
       >
         <Header />
         {children}
