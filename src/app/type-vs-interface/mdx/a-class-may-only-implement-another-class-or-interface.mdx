@@ -1,0 +1,13 @@
+```typescript
+ type UsersRepository = {
+   create: (name: string) => string;
+ };
+
+ class Users implements UsersRepository {
+   create(name: string) {
+     return "alv";
+   }
+ } 
+ // Error: A class may only implement another
+ // class or interface.
+```

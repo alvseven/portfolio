@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { ComponentProps } from "react";
 
 import AliasedTypeCannotBeAnObjectLiteral from "./mdx/aliased-type-cannot-be-an-object-literal.mdx";
+import TypeWithImplements from "./mdx/a-class-may-only-implement-another-class-or-interface.mdx";
 import InterfaceHover from "./interface-hover.png";
 import TypeHover from "./type-hover.png";
 
@@ -182,7 +183,29 @@ export default async function Home() {
             assunto, explicarei as diferenças, começaremos com as diferenças
             mais básicas e iremos até as mais avançadas, bora lá?
           </p>
+          <h4
+            className="opacity-100 my-4 text-xl lg:text-2xl"
+            id="interfaces-so-podem-definir-objetos-types-podem-definir-qualquer-tipo"
+          >
+            Interfaces só podem definir objetos, types podem definir qualquer
+            tipo
+          </h4>
+          <p>
+            Essa é uma das principais diferenças, interfaces servem
+            exclusivamente pra declarar objetos, e objetos podem ter métodos e
+            propriedades, já types podem fazer o mesmo, mas também podem definir
+            qualquer outro tipo, como arrays, tuplas, unions, funções, tipos
+            literais, mapped types, e até tipos primitivos como string, number,
+            boolean, Date, etc.
+          </p>
 
+          <p>
+            Outro ponto que vale ressalva, é de que até a versão 2.1 do
+            typescript, apenas interfaces e classes poderiam ser usadas como
+            contrato de uma classe através da keyword implements, usar um type
+            geraria um erro.
+          </p>
+          <TypeWithImplements />
           <h4
             className="opacity-100 my-4 text-xl lg:text-2xl"
             id="hover-em-type-vs-em-interface"
@@ -190,12 +213,12 @@ export default async function Home() {
             Hover em interface vs em type
           </h4>
           <p>
-            A primeira diferença que podemos notar é que o hover em interfaces e
-            o hover em type são diferentes, enquanto o hover na interface mostra
-            apenas o nome da interface, em type é mostrado o tipo definido e
-            também o seu nome.
+            A primeira diferença visual que podemos notar é que o hover em
+            interfaces e o hover em type são diferentes, enquanto o hover na
+            interface mostra apenas o nome da interface, em type é mostrado o
+            tipo definido e também o seu nome.
           </p>
-          <div className="flex flex-col gap-2 md:gap-6 items-center xl:justify-between xl:flex-row">
+          <div className="flex flex-col gap-2 md:gap-4 items-center xl:justify-between xl:flex-row">
             <Image
               src={InterfaceHover}
               alt="Hover em interface mostra apenas o seu nome"
@@ -222,27 +245,15 @@ export default async function Home() {
           </p>
 
           <p>
-            Já usando type, é como se estivéssemos criando apenas um alias, pra
-            um tipo que pode ser anônimo ou não
-          </p>
-          <h4
-            className="opacity-100 my-4 text-xl lg:text-2xl"
-            id="interfaces-so-podem-definir-objetos-types-podem-definir-qualquer-tipo"
-          >
-            Interfaces só podem definir objetos, types podem definir qualquer
-            tipo
-          </h4>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam
-            culpa dolor obcaecati id maiores architecto ad provident facere
-            quod, officiis, qui rerum inventore eos quos sint sequi ducimus.
-            Voluptate, sint.
-          </p>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam
-            culpa dolor obcaecati id maiores architecto ad provident facere
-            quod, officiis, qui rerum inventore eos quos sint sequi ducimus.
-            Voluptate, sint.
+            Já usando type, é como se estivéssemos criando apenas um&nbsp;
+            <Link
+              href="https://github.com/microsoft/TypeScript/pull/957#issuecomment-60464140"
+              target="_blank"
+              className="underline underline-offset-4 mr-px"
+            >
+              alias
+            </Link>
+            , pra um tipo que pode ser anônimo ou não.
           </p>
           <h4
             className="opacity-100 my-4 text-xl lg:text-2xl"
