@@ -213,7 +213,7 @@ export default async function Home() {
             tipo novo, por exemplo, se algo é do tipo&nbsp;
             <span className="text-highlight">String</span>&nbsp;
             {"(com letra maiúscula, estamos falando do constructor)"}, o que
-            você verá no hover é apenas o nome &nbsp;
+            você verá no hover é apenas o nome&nbsp;
             <span className="text-highlight">String</span>&nbsp;
             {"(até mesmo porque"}&nbsp;
             <span className="text-highlight">String</span>&nbsp;
