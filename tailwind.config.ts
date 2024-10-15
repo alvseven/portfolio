@@ -10,7 +10,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: ["var(--font-montserrat)"],
-        mono: ["var(--font-barlow-condensed)"],
+        mono: ["var(--font-sora)"],
         code: ["var(--font-fira-code)"],
       },
       textColor: {

@@ -32,7 +32,7 @@ export default async function Home() {
     <>
       <main className="flex col-span-12 sm:col-span-9 py-8">
         <article className="flex flex-col gap-4 px-4 sm:pr-12 pl-6 xl:pl-0 max-w-full">
-          <h1 className="opacity-100 font-bold text-3xl text-pretty text-title lg:text-4xl tracking-wide">
+          <h1 className="opacity-100 font-bold text-2xl text-pretty text-title lg:text-3xl tracking-wide">
             Type narrowing e type widening no typescript
           </h1>
           <Intro className="rounded-3xl" />
@@ -192,7 +192,7 @@ export default async function Home() {
             href="https://www.typescriptlang.org/play/?#code/PTAEDMFcDsGMBcCWB7aoAmyDKyC2BTeAC0WgHMAKANwEMAbSfALlAGd4AnUs0AH1GiRcAI3wcAlKADeAKBCgAkB0KQOaWg3wA6eMgCqABwNiAwjVb4K4uWAC+Mh-KhwkqDNjyES5avUYt2LnI+ASFRCWkbUGjEcAp4AE9jZHBQDUZQAF5s0AAiQO5cyVl5aLLleFV1P21dQ2MOMwsrKOj7UtAKqtAAcgA5AGPkCGREUANkVlYAW6p8OlBYVDmOeDFxmg4aUEgjMVhzfB6o+0cwJeh2NJqsvIB2XLPQOkJrzVvch4col-g3-zYnG4IUEInWmXujyi6XwtzuDiAA"
             target="_blank"
           >
-            <span className="group-hover:text-title block font-medium font-mono text-xl tracking-wider transform transition-transform group-hover:translate-x-[3px] ease-in-out">
+            <span className="group-hover:text-title block font-medium font-mo text-xl tracking-wider transform transition-transform group-hover:translate-x-[3px] ease-in-out">
               Playground com os exemplos
               <ExternalRedirectIcon className="lg:inline hidden pl-2" />
             </span>

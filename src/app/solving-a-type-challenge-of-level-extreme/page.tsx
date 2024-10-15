@@ -6,7 +6,7 @@ export default async function Home() {
   return (
     <>
       <section className="flex flex-col items-start gap-4">
-        <h1 className="font-bold text-xl">
+        <h1 className="font-bold text-2xl">
           Resolvendo um type challenge de nível extreme
         </h1>
 

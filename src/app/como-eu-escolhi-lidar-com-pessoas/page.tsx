@@ -24,7 +24,7 @@ export default async function Home() {
     <>
       <main className="flex col-span-12 sm:col-span-9 py-8">
         <article className="flex flex-col gap-4 px-4 sm:pr-12 pl-6 xl:pl-0 max-w-full">
-          <h1 className="opacity-100 font-bold text-3xl text-pretty text-title lg:text-4xl tracking-wide">
+          <h1 className="opacity-100 font-bold text-2xl text-pretty text-title lg:text-3xl tracking-wide">
             Como eu escolhi lidar com pessoas
           </h1>
           <p>

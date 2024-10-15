@@ -2,8 +2,11 @@ import Link from "next/link";
 import type { ComponentProps } from "react";
 
 import AliasedTypeCannotBeAnObjectLiteral from "./mdx/aliased-type-cannot-be-an-object-literal.mdx";
+import InterfaceHover from "./interface-hover.png";
+import TypeHover from "./type-hover.png";
 
 import { AsideNavigationMenu } from "../(shared)/components/ui/aside-navigation-menu";
+import Image from "next/image";
 
 export default async function Home() {
   const navigationItems: ComponentProps<
@@ -59,7 +62,7 @@ export default async function Home() {
     <>
       <main className="flex col-span-12 sm:col-span-9 py-8">
         <article className="flex flex-col gap-4 px-4 sm:pr-12 pl-6 xl:pl-0 max-w-full">
-          <h1 className="opacity-100 font-bold text-3xl text-pretty text-title lg:text-4xl tracking-wide">
+          <h1 className="opacity-100 font-bold text-2xl text-pretty text-title lg:text-3xl tracking-wide">
             Type vs interface
           </h1>
           <p>
@@ -122,7 +125,7 @@ export default async function Home() {
 
           <p>
             Dessa forma seria tranquilo decidir qual usar ou não, precisa
-            definir objetos? Use{" "}
+            definir objetos? Use&nbsp;
             <span className="text-highlight pl-px">interface</span>, pro resto,
             use <span className="text-highlight pl-px">type</span>, a ideia por
             trás disso era justamente evitar confusão, mas isso acabou mudando.
@@ -187,16 +190,40 @@ export default async function Home() {
             Hover em interface vs em type
           </h4>
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis
-            recusandae accusamus explicabo facilis reprehenderit velit nihil!
-            Repudiandae cum eligendi, inventore officia dolor suscipit natus,
-            repellendus, doloremque voluptatem qui cumque voluptas!
+            A primeira diferença que podemos notar é que o hover em interfaces e
+            o hover em type são diferentes, enquanto o hover na interface mostra
+            apenas o seu nome, em type é mostrado o tipo definido e também o seu
+            nome.
           </p>
+          <div className="flex flex-col gap-2 md:gap-6 items-center xl:justify-between xl:flex-row">
+            <Image
+              src={InterfaceHover}
+              alt="Hover em interface mostra apenas o seu nome"
+              className="w-11/12"
+            />
+            <span className="text-2xl font-medium font-mono">VS</span>
+            <Image
+              src={TypeHover}
+              alt="Hover em type mostra seu nome e também o tipo definido"
+              className="w-11/12"
+            />
+          </div>
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis
-            recusandae accusamus explicabo facilis reprehenderit velit nihil!
-            Repudiandae cum eligendi, inventore officia dolor suscipit natus,
-            repellendus, doloremque voluptatem qui cumque voluptas!
+            Criando um tipo usando interface é como se estivéssemos criando um
+            tipo novo, por exemplo, se algo é do tipo
+            <span className="text-highlight">String</span>&nbsp;
+            {"(com letra maiúscula, estamos falando do constructor)"}, o que
+            você verá no hover é apenas o nome
+            <span className="text-highlight">String</span>&nbsp;
+            {"(até mesmo porque"}&nbsp;
+            <span className="text-highlight">String</span>&nbsp;
+            {"é implementado usando interface)"}&nbsp;e não todos os métodos e
+            propriedades que <span className="text-highlight">String</span> tem.
+          </p>
+
+          <p>
+            Já usando type, é como se estivéssemos criando apenas um alias, pra
+            um tipo que pode ser anônimo ou não
           </p>
           <h4
             className="opacity-100 my-4 text-xl lg:text-2xl"
