@@ -192,8 +192,8 @@ export default async function Home() {
           <p>
             A primeira diferença que podemos notar é que o hover em interfaces e
             o hover em type são diferentes, enquanto o hover na interface mostra
-            apenas o seu nome, em type é mostrado o tipo definido e também o seu
-            nome.
+            apenas o nome da interface, em type é mostrado o tipo definido e
+            também o seu nome.
           </p>
           <div className="flex flex-col gap-2 md:gap-6 items-center xl:justify-between xl:flex-row">
             <Image
@@ -210,7 +210,7 @@ export default async function Home() {
           </div>
           <p>
             Criando um tipo usando interface é como se estivéssemos criando um
-            tipo novo, por exemplo, se algo é do tipo
+            tipo novo, por exemplo, se algo é do tipo&nbsp;
             <span className="text-highlight">String</span>&nbsp;
             {"(com letra maiúscula, estamos falando do constructor)"}, o que
             você verá no hover é apenas o nome
