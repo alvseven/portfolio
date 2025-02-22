@@ -196,7 +196,7 @@ export default async function Home() {
             propriedades, já types podem fazer o mesmo, mas também podem definir
             qualquer outro tipo, como arrays, tuplas, unions, funções, tipos
             literais, mapped types, e até tipos primitivos como string, number,
-            boolean, Date, etc.
+            boolean, date, etc.
           </p>
 
           <p>
@@ -214,7 +214,7 @@ export default async function Home() {
           </h4>
           <p>
             A primeira diferença visual que podemos notar é que o hover em
-            interfaces e o hover em type são diferentes, enquanto o hover na
+            interface e o hover em type são diferentes, enquanto o hover na
             interface mostra apenas o nome da interface, em type é mostrado o
             tipo definido e também o seu nome.
           </p>
