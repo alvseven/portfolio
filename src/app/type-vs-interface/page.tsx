@@ -313,9 +313,9 @@ export default async function Home() {
             Uma das coisas que sempre digo é que quanto menos tipos manualmente
             você escrever, melhor. Pra isso, constantemente uso e recomendo
             tipos derivados, que geralmente vêm de um valor já existente em
-            runtime, através do operador
-            <span className="text-highlight pl-px">typeof</span>, essa abordagem
-            é menos suscetível a erros, reduz a quantidade de código escrito e
+            runtime, através do operador&nbsp;
+            <span className="text-highlight">typeof</span>, essa abordagem é
+            menos suscetível a erros, reduz a quantidade de código escrito e
             deixa o código mais contundente (tema pra um próximo artigo 👀).
           </p>
 
@@ -330,24 +330,26 @@ export default async function Home() {
           <DerivedTypesWithInterface />
 
           <p>
-            Há uma
+            Há uma&nbsp;
             <Link
               href="https://github.com/microsoft/TypeScript/issues/31843"
               target="_blank"
-              className="underline underline-offset-4 mr-px"
+              className="underline underline-offset-4"
             >
               issue aberta
             </Link>
-            &nbsp;no repositório do typescript que apesar de não falar
-            exatamente sobre typeof como no exemplo, segue um princípio
-            parecido, esperançosamente algum dia expressões como essa serão
-            permitidas em interfaces, mas atualmente, não funcionam.
+            &nbsp;no repositório do typescript que apesar de não citar
+            exatamente o operador&nbsp;
+            <span className="text-highlight">typeof</span>&nbsp;como no exemplo,
+            segue um princípio parecido, esperançosamente algum dia expressões
+            como essa serão permitidas em interfaces, mas atualmente, não
+            funcionam.
           </p>
 
           <p>
             E um disclaimer importante e talvez óbvio: você pode usar
-            normalmente typeof em propriedades de interfaces, só não na
-            definição delas.
+            normalmente&nbsp;<span className="text-highlight">typeof</span>
+            &nbsp;em propriedades de interfaces, só não na definição delas.
           </p>
 
           <InterfacesWithDerivedPropertyTypes />
