@@ -411,7 +411,7 @@ export default async function Home() {
           <p>
             Podemos resolver isso usando uma assinatura explícita de índice, mas
             isso faria com que a interface também aceitasse outras propriedades
-            além da propriedade &apos;name&apos;
+            além da propriedade &apos;name&apos;.
           </p>
 
           <InterfaceWithExplicitIndexSignature />
