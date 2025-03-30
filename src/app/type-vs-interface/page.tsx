@@ -1,13 +1,23 @@
-import Link from "next/link";
 import type { ComponentProps } from "react";
+
+import Link from "next/link";
+import Image from "next/image";
 
 import AliasedTypeCannotBeAnObjectLiteral from "./mdx/aliased-type-cannot-be-an-object-literal.mdx";
 import TypeWithImplements from "./mdx/a-class-may-only-implement-another-class-or-interface.mdx";
+import InterfaceDeclarationMerging from "./mdx/interface-declaration-merging.mdx";
+import TypeDeclarationMerging from "./mdx/type-declaration-merging.mdx";
 import InterfaceHover from "./interface-hover.png";
 import TypeHover from "./type-hover.png";
+import InterfaceWithUnions from "./mdx/interface-with-unions.mdx";
+import DerivedTypesWithType from "./mdx/derived-types-with-type.mdx";
+import DerivedTypesWithInterface from "./mdx/derived-types-with-interface.mdx";
+import InterfacesWithDerivedPropertyTypes from "./mdx/interfaces-with-derived-property-types.mdx";
+import TypesHasImplicitIndexSignature from "./mdx/types-has-implicit-index-signature.mdx";
+import InterfacesDoesNotHaveImplicitIndexSignature from "./mdx/interfaces-does-not-has-implicit-index-signature.mdx";
+import InterfaceWithExplicitIndexSignature from "./mdx/interface-with-explicit-index-signature.mdx";
 
 import { AsideNavigationMenu } from "../(shared)/components/ui/aside-navigation-menu";
-import Image from "next/image";
 
 export default async function Home() {
   const navigationItems: ComponentProps<
@@ -29,11 +39,6 @@ export default async function Home() {
     {
       href: "#interfaces-podem-ser-redeclaradas-types-nao",
       title: "Interfaces podem ser redeclaradas, types não",
-    },
-    {
-      href: "#interfaces-nao-podem-estender-uma-union-mesmo-que-seja-uma-union-de-objetos",
-      title:
-        "Interfaces não podem estender uma union, mesmo que seja uma union de objetos",
     },
     {
       href: "#interfaces-nao-podem-ser-utilizadas-para-criar-tipos-derivados",
@@ -200,12 +205,24 @@ export default async function Home() {
           </p>
 
           <p>
-            Outro ponto que vale ressalva, é de que até a versão 2.1 do
-            typescript, apenas interfaces e classes poderiam ser usadas como
-            contrato de uma classe através da keyword implements, usar um type
-            geraria um erro.
+            Um ponto que vale a ressalva é que interfaces não podem estender
+            unions, mesma que seja uma union de objetos, afinal, o que teríamos
+            como resultado final seria uma union.
+          </p>
+          <InterfaceWithUnions />
+          <p>
+            Outro ponto de atenção é que talvez você tenha visto em sites como
+            stackoverflow ou em artigos que apenas interfaces e classes poderiam
+            ser usadas como contrato de uma classe, usar type geraria um erro.
           </p>
           <TypeWithImplements />
+
+          <p>
+            Mas isso é parcialmente verdade, até a versão 2.1 do typescript usar
+            type realmente geraria um erro, nas versões seguintes ambas as
+            keywords type e interface servem pra definir contratos e serem
+            utilizadas com implements.
+          </p>
           <h4
             className="opacity-100 my-4 text-xl lg:text-2xl"
             id="hover-em-type-vs-em-interface"
@@ -231,9 +248,9 @@ export default async function Home() {
               className="w-11/12"
             />
           </div>
-          <p>
+          <p className="text-start">
             Criando um tipo usando interface é como se estivéssemos criando um
-            tipo novo, por exemplo, se algo é do tipo&nbsp;
+            tipo novo. Por exemplo, se algo é do tipo&nbsp;
             <span className="text-highlight">String</span>&nbsp;
             {"(com letra maiúscula, estamos falando do constructor)"}, o que
             você verá no hover é apenas o nome&nbsp;
@@ -262,37 +279,28 @@ export default async function Home() {
             Interfaces podem ser redeclaradas, types não
           </h4>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis
-            quasi in recusandae fuga doloremque vero, ex beatae odio culpa harum
-            asperiores. Et temporibus commodi error consectetur eligendi placeat
-            nisi. Quibusdam.
-          </p>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis
-            quasi in recusandae fuga doloremque vero, ex beatae odio culpa harum
-            asperiores. Et temporibus commodi error consectetur eligendi placeat
-            nisi. Quibusdam.
+            Interfaces podem ser declaradas múltiplas vezes e o TypeScript vai
+            automaticamente mesclar essas declarações, como se fosse uma única
+            interface. Esse processo é chamado de &apos;declaration
+            merging&apos;.
           </p>
 
-          <h4
-            className="opacity-100 my-4 text-xl lg:text-2xl"
-            id="interfaces-nao-podem-estender-uma-union-mesmo-que-seja-uma-union-de-objetos"
-          >
-            Interfaces não podem estender uma union, mesmo que seja uma union de
-            objetos
-          </h4>
+          <InterfaceDeclarationMerging />
 
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem quam
-            totam earum eum, ipsa veritatis odio minima amet enim unde accusamus
-            sequi voluptates sunt nostrum error deleniti ducimus voluptatibus
-            molestias?
+            Já usando type, redeclarar irá gerar um erro, isso ocorre porque o
+            type é tratado como um alias para um tipo específico (como
+            mencionado no tópico acima) e, uma vez definido, não pode ser
+            modificado ou estendido através de uma nova declaração.
           </p>
+
+          <TypeDeclarationMerging />
+
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem quam
-            totam earum eum, ipsa veritatis odio minima amet enim unde accusamus
-            sequi voluptates sunt nostrum error deleniti ducimus voluptatibus
-            molestias?
+            Esse comportamento de &apos;declaration merging&apos; pode ou não
+            ser um problema, a depender do seu cenário. Mas geralmente definir
+            um tipo novamente com o mesmo nome tende a ser um erro não
+            proposital, falaremos mais sobre em breve.
           </p>
 
           <h4
@@ -302,17 +310,47 @@ export default async function Home() {
             Interfaces não podem ser utilizadas para criar tipos derivados
           </h4>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto,
-            saepe magnam. Nesciunt dolores impedit fugiat, voluptate, laudantium
-            recusandae illum laboriosam qui tempore id sed, tenetur harum sequi
-            iste porro ipsam.
+            Uma das coisas que sempre digo é que quanto menos tipos manualmente
+            você escrever, melhor. Pra isso, constantemente uso e recomendo
+            tipos derivados, que geralmente vêm de um valor já existente em
+            runtime, através do operador
+            <span className="text-highlight pl-px">typeof</span>, essa abordagem
+            é menos suscetível a erros, reduz a quantidade de código escrito e
+            deixa o código mais contundente (tema pra um próximo artigo 👀).
           </p>
+
+          <DerivedTypesWithType />
+
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto,
-            saepe magnam. Nesciunt dolores impedit fugiat, voluptate, laudantium
-            recusandae illum laboriosam qui tempore id sed, tenetur harum sequi
-            iste porro ipsam.
+            O problema é que outra limitação da keyword interface é que ela não
+            pode ser usada para representar tipos derivados, mesmo que esse tipo
+            seja um objeto.
           </p>
+
+          <DerivedTypesWithInterface />
+
+          <p>
+            Há uma
+            <Link
+              href="https://github.com/microsoft/TypeScript/issues/31843"
+              target="_blank"
+              className="underline underline-offset-4 mr-px"
+            >
+              issue aberta
+            </Link>
+            &nbsp;no repositório do typescript que apesar de não falar
+            exatamente sobre typeof como no exemplo, segue um princípio
+            parecido, esperançosamente algum dia expressões como essa serão
+            permitidas em interfaces, mas atualmente, não funcionam.
+          </p>
+
+          <p>
+            E um disclaimer importante e talvez óbvio: você pode usar
+            normalmente typeof em propriedades de interfaces, só não na
+            definição delas.
+          </p>
+
+          <InterfacesWithDerivedPropertyTypes />
 
           <h4
             className="opacity-100 my-4 text-xl lg:text-2xl"
@@ -340,17 +378,42 @@ export default async function Home() {
             Types têm assinatura implícita de índice
           </h4>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto,
-            saepe magnam. Nesciunt dolores impedit fugiat, voluptate, laudantium
-            recusandae illum laboriosam qui tempore id sed, tenetur harum sequi
-            iste porro ipsam.
+            Um comportamento sutil que difere entre type e interface é que types
+            têm assinatura implícita de índice, e interfaces não, pergunta: há
+            algum erro no código abaixo?
           </p>
+
+          <TypesHasImplicitIndexSignature />
+
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto,
-            saepe magnam. Nesciunt dolores impedit fugiat, voluptate, laudantium
-            recusandae illum laboriosam qui tempore id sed, tenetur harum sequi
-            iste porro ipsam.
+            Se disse que &apos;não&apos;, então você acertou! Faz sentido, a
+            variável &apos;test&apos; deve ser um objeto que tem propriedades e
+            valores do tipo string, e a variável &apos;user&apos; é atribuível a
+            isso.
           </p>
+
+          <p>
+            Mas e se mudássemos a declaração de &apos;User&apos; para usarmos
+            interface ao invés de type?
+          </p>
+          <InterfacesDoesNotHaveImplicitIndexSignature />
+          <p>
+            Obteríamos um erro, estranho, né? Lembra que mencionei que
+            interfaces podem ser redeclaradas? É esse o causador desse erro, o
+            TypeScript sabe que essa interface pode ser redeclarada, e por isso
+            não necessariamente ela só terá propriedades e valores do tipo
+            string, logo, nenhuma assinatura de índice é definida
+            implicitamente.
+          </p>
+
+          <p>
+            Podemos resolver isso usando uma assinatura explícita de índice, mas
+            isso faria com que a interface também aceitasse outras propriedades
+            além da propriedade &apos;name&apos;
+          </p>
+
+          <InterfaceWithExplicitIndexSignature />
+
           <h4
             className="opacity-100 my-4 text-xl lg:text-2xl"
             id="interfaces-tem-melhor-performance-do-que-types-ao-compor-varios-objetos"

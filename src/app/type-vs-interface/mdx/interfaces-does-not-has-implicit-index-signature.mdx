@@ -1,0 +1,13 @@
+```typescript
+ interface User {
+   name: string;
+ }
+
+ const user: User = {
+   name: 'alves'
+ };
+
+ const test: { [key: string]: string} = user;
+ // Type 'User' is not assignable to type '{ [key: string]: string; }'.
+ // Index signature for type 'string' is missing in type 'User'.
+```

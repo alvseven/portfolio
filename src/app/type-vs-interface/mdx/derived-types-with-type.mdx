@@ -1,0 +1,19 @@
+```typescript
+ const apiConfig = {
+   endpoints: {
+     users: "/api/users",
+     products: "/api/products",
+     orders: "/api/orders"
+   },
+   headers: {
+     "Content-Type": "application/json",
+     "Accept": "application/json"
+   },
+   timeout: 5000,
+   retries: 3
+ } as const;
+
+ type ApiEndpoints = typeof apiConfig.endpoints;
+
+ type EndpointKeys = keyof ApiEndpoints;
+```

@@ -1,0 +1,18 @@
+```typescript
+ interface User {
+   name: string;
+   [key: string]: string;
+ }
+
+ const user: User = {
+   name: 'alves'
+ };
+
+ const test: { [key: string]: string} = user;  // no errors
+
+ // but now this is ok
+ const userTwo: User = {
+    name: 'alves',
+    other: 'random',
+  };
+```

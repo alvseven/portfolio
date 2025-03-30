@@ -1,0 +1,9 @@
+```typescript
+ const apiConfig = {
+    // ...
+ } as const;
+
+ interface ApiEndpoints extends (typeof apiConfig.endpoints) {};
+ // An interface can only extend an identifier/qualified-name with 
+ // optional type arguments.
+```

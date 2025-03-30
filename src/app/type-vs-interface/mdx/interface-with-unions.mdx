@@ -1,0 +1,17 @@
+```typescript	
+ type Admin = {
+   name: string;
+   role: 'admin';
+ };
+
+ type Moderator = {
+   name: string;
+   role: 'moderator';
+ };
+
+ type User = Admin | Moderator
+ 
+ interface Entity extends User {};
+ // An interface can only extend an object type or intersection of 
+ // object types with statically known members.
+```

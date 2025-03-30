@@ -1,0 +1,15 @@
+```typescript	
+ type User = {
+   name: string;
+ } // Duplicate identifier 'User'.
+
+ type User = {
+   age: number;
+ } // Duplicate identifier 'User'.
+
+ const user: User = {
+   name: 'alves',
+   age: 22 // Object literal may only specify known properties,
+           // and 'age' does not exist in type 'User'.
+ };
+```
