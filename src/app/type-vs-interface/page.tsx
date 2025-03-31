@@ -18,6 +18,7 @@ import InterfacesDoesNotHaveImplicitIndexSignature from "./mdx/interfaces-does-n
 import InterfaceWithExplicitIndexSignature from "./mdx/interface-with-explicit-index-signature.mdx";
 import TypeWithSamePropertyIntersected from "./mdx/type-with-same-property-intersected.mdx";
 import InterfaceWithSamePropertyIntersected from "./mdx/interface-with-same-property-intersected.mdx";
+import PreferExtendsOverIntersections from "./mdx/prefer-extends-over-intersections.mdx";
 
 import { AsideNavigationMenu } from "../(shared)/components/ui/aside-navigation-menu";
 
@@ -111,7 +112,6 @@ export default async function Home() {
             </Link>
             {"(6 versões após a primeira versão)"}.
           </p>
-
           <p>
             Enquanto isso, interfaces sempre existiram. Você provavelmente sabe
             que interfaces só podem definir objetos&nbsp;
@@ -120,7 +120,6 @@ export default async function Home() {
             etc? Simples, isso nem existia ainda, a criação da keyword type
             possibilitou a adição de outras várias features.
           </p>
-
           <p>
             Esse é o primeiro motivo da dúvida não existir antigamente. E o
             segundo motivo? Bom, acontece que a ideia era que types fossem
@@ -136,9 +135,7 @@ export default async function Home() {
               usar type para objetos literais geraria uma mensagem de erro.
             </Link>
           </p>
-
           <AliasedTypeCannotBeAnObjectLiteral />
-
           <p>
             Dessa forma seria tranquilo decidir qual usar ou não, precisa
             definir objetos? Use&nbsp;
@@ -146,13 +143,11 @@ export default async function Home() {
             use <span className="text-highlight pl-px">type</span>, a ideia por
             trás disso era justamente evitar confusão, mas isso acabou mudando.
           </p>
-
           <p>
             Após investigar, não consegui reproduzir a mensagem de erro acima,
             então presumo que antes da versão 1.4 ser oficialmente lançada, isso
             foi removido.
           </p>
-
           <p>
             Aliás, aqui está a&nbsp;
             <Link
@@ -182,7 +177,6 @@ export default async function Home() {
             </Link>
             &nbsp;desse tema.&nbsp;
           </p>
-
           <p>
             Show, entendemos a história por trás disso tudo, mas e agora? Nos
             sobra uma dúvida, qual usar? O próprio time do typescript documentou
@@ -212,7 +206,6 @@ export default async function Home() {
             literais, mapped types, e até tipos primitivos como string, number,
             boolean, date, etc.
           </p>
-
           <p>
             Um ponto que vale a ressalva é que interfaces não podem estender
             unions, mesma que seja uma union de objetos, afinal, o que teríamos
@@ -225,7 +218,6 @@ export default async function Home() {
             ser usadas como contrato de uma classe, usar type geraria um erro.
           </p>
           <TypeWithImplements />
-
           <p>
             Mas isso é parcialmente verdade, até a versão 2.1 do typescript usar
             type realmente geraria um erro, nas versões seguintes ambas as
@@ -269,7 +261,6 @@ export default async function Home() {
             {"é implementado usando interface)"}&nbsp;e não todos os métodos e
             propriedades que <span className="text-highlight">String</span> tem.
           </p>
-
           <p>
             Já usando type, é como se estivéssemos criando apenas um&nbsp;
             <Link
@@ -293,25 +284,20 @@ export default async function Home() {
             interface. Esse processo é chamado de &apos;declaration
             merging&apos;.
           </p>
-
           <InterfaceDeclarationMerging />
-
           <p>
             Já usando type, redeclarar irá gerar um erro, isso ocorre porque o
             type é tratado como um alias para um tipo específico (como
             mencionado no tópico acima) e, uma vez definido, não pode ser
             modificado ou estendido através de uma nova declaração.
           </p>
-
           <TypeDeclarationMerging />
-
           <p>
             Esse comportamento de &apos;declaration merging&apos; pode ou não
             ser um problema, a depender do seu cenário. Mas geralmente definir
             um tipo novamente com o mesmo nome tende a ser um erro não
             proposital, falaremos mais sobre em breve.
           </p>
-
           <h4
             className="opacity-100 my-4 text-xl lg:text-2xl"
             id={navigationItems[4].href}
@@ -327,17 +313,13 @@ export default async function Home() {
             menos suscetível a erros, reduz a quantidade de código escrito e
             deixa o código mais contundente (tema pra um próximo artigo 👀).
           </p>
-
           <DerivedTypesWithType />
-
           <p>
             O problema é que outra limitação da keyword interface é que ela não
             pode ser usada para representar tipos derivados, mesmo que esse tipo
             seja um objeto.
           </p>
-
           <DerivedTypesWithInterface />
-
           <p>
             Há uma&nbsp;
             <Link
@@ -354,15 +336,12 @@ export default async function Home() {
             como essa serão permitidas em interfaces, mas atualmente, não
             funcionam.
           </p>
-
           <p>
             E um disclaimer importante e talvez óbvio: você pode usar
             normalmente&nbsp;<span className="text-highlight">typeof</span>
             &nbsp;em propriedades de interfaces, só não na definição delas.
           </p>
-
           <InterfacesWithDerivedPropertyTypes />
-
           <h4
             className="opacity-100 my-4 text-xl lg:text-2xl"
             id={navigationItems[5].href}
@@ -375,7 +354,6 @@ export default async function Home() {
             interseção, já com interface, utilizamos a keyword
             &apos;extends&apos;.
           </p>
-
           <p>
             Apesar de propósitos parecidos, existe uma diferença entre
             &apos;&&apos; e &apos;extends&apos;, ao compor objetos, uma
@@ -384,17 +362,13 @@ export default async function Home() {
             mais objetos possuem uma propriedade com o mesmo nome, os seus tipos
             serão interseccionados, e isso frequentemente resulta em never.
           </p>
-
           <TypeWithSamePropertyIntersected />
-
           <p>
             Já com interfaces, as propriedades com os mesmos nomes precisam ter
             os mesmos tipos. Na maioria dos casos, esse comportamento é
             especialmente útil, mas depende do seu cenário.
           </p>
-
           <InterfaceWithSamePropertyIntersected />
-
           <h4
             className="opacity-100 my-4 text-xl lg:text-2xl"
             id={navigationItems[6].href}
@@ -406,16 +380,13 @@ export default async function Home() {
             têm assinatura implícita de índice, e interfaces não, pergunta: há
             algum erro no código abaixo?
           </p>
-
           <TypesHasImplicitIndexSignature />
-
           <p>
             Se disse que &apos;não&apos;, então você acertou! Faz sentido, a
             variável &apos;test&apos; deve ser um objeto que tem propriedades e
             valores do tipo string, e a variável &apos;user&apos; é atribuível a
             isso.
           </p>
-
           <p>
             Mas e se mudássemos a declaração de &apos;User&apos; para usarmos
             interface ao invés de type?
@@ -429,22 +400,40 @@ export default async function Home() {
             string, logo, nenhuma assinatura de índice é definida
             implicitamente.
           </p>
-
           <p>
             Podemos resolver isso usando uma assinatura explícita de índice, mas
             isso faria com que a interface também aceitasse outras propriedades
             além da propriedade &apos;name&apos;.
           </p>
-
           <InterfaceWithExplicitIndexSignature />
-
           <h4
             className="opacity-100 my-4 text-xl lg:text-2xl"
             id={navigationItems[7].href}
           >
             {navigationItems[7].title}
           </h4>
-          <p>Work in progress</p>
+          <p>
+            Quando temos uma extensão/interseção com mais de 2 objetos, tende a
+            ser preferível que usemos interface para compor esses objetos ao
+            invés de type, por questões de performance, já que as relações entre
+            interfaces são cacheadas.
+          </p>
+
+          <PreferExtendsOverIntersections />
+
+          <p>
+            Essa performance melhor em interfaces é algo inclusive documentado
+            pelo próprio time do typescript, e você pode ver mais sobre isso na
+            &nbsp;
+            <Link
+              href="https://github.com/microsoft/TypeScript/wiki/Performance#preferring-interfaces-over-intersections"
+              target="_blank"
+              className="underline underline-offset-4"
+            >
+              wiki do typescript
+            </Link>
+            .
+          </p>
           <h4
             className="opacity-100 my-4 text-xl lg:text-2xl"
             id={navigationItems[8].href}
@@ -452,23 +441,19 @@ export default async function Home() {
             {navigationItems[8].title}
           </h4>
           <p>Work in progress</p>
-
           <h4
             className="opacity-100 my-4 text-xl lg:text-2xl"
             id={navigationItems[9].href}
           >
             {navigationItems[9].title}
           </h4>
-
           <p>Work in progress</p>
-
           <h4
             className="opacity-100 my-4 text-xl lg:text-2xl"
             id={navigationItems[10].href}
           >
             {navigationItems[10].title}
           </h4>
-
           <p>Work in progress</p>
         </article>
       </main>
