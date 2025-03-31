@@ -1,4 +1,6 @@
-import type { ComponentProps } from "react";
+'use client'
+
+import { useEffect, type ComponentProps } from "react";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -29,8 +31,9 @@ import UnknownAndIntersections from "./mdx/unknown-and-intersections.mdx";
 import FunctionsWithInterface from "./mdx/functions-with-interface.mdx";
 
 import { AsideNavigationMenu } from "../(shared)/components/ui/aside-navigation-menu";
+import { useState } from "react";
 
-export default async function Home() {
+export default function Home() {
   const navigationItems = [
     {
       href: "#o-comeco-de-tudo",
@@ -82,6 +85,29 @@ export default async function Home() {
   ] as const satisfies ComponentProps<
     typeof AsideNavigationMenu
   >["navigationItems"];
+
+  const [activeItemIndex, setActiveItemIndex] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const sections = document.querySelectorAll("h4[id]");
+
+      let newActiveIndex = 0;
+      sections.forEach((section, index) => {
+        const sectionTop = section.getBoundingClientRect().top + scrollPosition;
+        if (sectionTop <= scrollPosition + window.innerHeight / 2) {
+          newActiveIndex = index;
+        }
+      });
+
+      setActiveItemIndex(newActiveIndex);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
 
   return (
     <>
@@ -737,7 +763,8 @@ export default async function Home() {
           <FunctionsWithInterface />
         </article>
       </main>
-      <AsideNavigationMenu navigationItems={navigationItems} />
+      
+      <AsideNavigationMenu activeItemIndex={activeItemIndex} navigationItems={navigationItems} />
     </>
   );
 }
