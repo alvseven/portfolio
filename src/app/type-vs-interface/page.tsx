@@ -60,8 +60,8 @@ export default async function Home() {
         "Interfaces têm melhor performance do que types ao compor vários objetos",
     },
     {
-      href: "interfaces-tem-this-e-isso-possibilita-a-criacao-de-higher-kinded-types",
-      title: `Interfaces têm ${"this"} e isso possibilita a criação de Higher Kinded Types`,
+      href: "interfaces-tem-this",
+      title: `Interfaces têm ${"this"}`,
     },
     {
       href: "qual-usar",
