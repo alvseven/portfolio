@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { ComponentProps } from "react";
+import { useEffect, useState, type ComponentProps } from "react";
 
 import Intro from "./mdx/intro.mdx";
 import NarrowingExample from "./mdx/narrowing-example.mdx";
@@ -9,6 +9,7 @@ import LetExample from "./mdx/let-example.mdx";
 import LetExampleFix from "./mdx/let-example-fix.mdx";
 import { ExternalRedirectIcon } from "@/app/(shared)/components/icons/external-redirect";
 import { AsideNavigationMenu } from "../(shared)/components/ui/aside-navigation-menu";
+import { useScrollSpy } from "@/hooks/article-progress";
 
 export default async function Home() {
   const navigationItems: ComponentProps<
@@ -27,6 +28,7 @@ export default async function Home() {
       withExternalRedirect: true,
     },
   ];
+  const { activeItemIndex } = useScrollSpy()
 
   return (
     <>
@@ -199,7 +201,7 @@ export default async function Home() {
           </Link>
         </article>
       </main>
-      <AsideNavigationMenu navigationItems={navigationItems} />
+      <AsideNavigationMenu activeItemIndex={activeItemIndex} navigationItems={navigationItems} />
     </>
   );
 }

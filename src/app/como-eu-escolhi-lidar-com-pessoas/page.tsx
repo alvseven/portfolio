@@ -1,6 +1,7 @@
-import type { ComponentProps } from "react";
+import { useEffect, useState, type ComponentProps } from "react";
 
 import { AsideNavigationMenu } from "../(shared)/components/ui/aside-navigation-menu";
+import { useScrollSpy } from "@/hooks/article-progress";
 
 export default async function Home() {
   const navigationItems: ComponentProps<
@@ -20,6 +21,8 @@ export default async function Home() {
     },
   ];
 
+  const { activeItemIndex } = useScrollSpy()
+  
   return (
     <>
       <main className="flex col-span-12 sm:col-span-9 py-8">
@@ -169,7 +172,7 @@ export default async function Home() {
           </p>
         </article>
       </main>
-      <AsideNavigationMenu navigationItems={navigationItems} />
+      <AsideNavigationMenu activeItemIndex={activeItemIndex} navigationItems={navigationItems} />
     </>
   );
 }
