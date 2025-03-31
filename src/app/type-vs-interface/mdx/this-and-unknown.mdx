@@ -1,0 +1,17 @@
+```typescript
+ interface User {
+   name: string;
+   age: unknown;
+   values: this['age']; // unknown
+ } 
+
+ interface Admin extends User {
+   age: number;
+ }
+
+ const admin: Admin = {
+   name: 'alves',
+   age: 22,
+   values: 22 
+ }
+```

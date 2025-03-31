@@ -1,0 +1,13 @@
+```typescript
+ interface User {
+   name: string
+   fullName: string
+ }
+
+ // or
+
+ interface User {
+   name: string
+   fullName:  User['name'] // string
+ }
+```

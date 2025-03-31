@@ -1,0 +1,28 @@
+```typescript
+ interface Timestamped {
+   timestamp: Date;
+   setTimestamp(date: Date): this;
+ }
+
+ interface Named {
+   name: string;
+   setName(name: string): this;
+ }
+
+ class User implements Timestamped, Named {
+   timestamp = new Date();
+   name = "alves";
+  
+   setTimestamp(date: Date) {
+     this.timestamp = date;
+     return this;
+   }
+  
+   setName(name: string) {
+     this.name = name;
+     return this;
+   }
+ }
+
+ new User().setName("John").setTimestamp(new Date());
+```

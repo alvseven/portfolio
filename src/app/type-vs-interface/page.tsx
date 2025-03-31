@@ -19,6 +19,14 @@ import InterfaceWithExplicitIndexSignature from "./mdx/interface-with-explicit-i
 import TypeWithSamePropertyIntersected from "./mdx/type-with-same-property-intersected.mdx";
 import InterfaceWithSamePropertyIntersected from "./mdx/interface-with-same-property-intersected.mdx";
 import PreferExtendsOverIntersections from "./mdx/prefer-extends-over-intersections.mdx";
+import TypeWithThis from "./mdx/type-with-this.mdx";
+import FluentApiWithInterface from "./mdx/fluent-api-with-interface.mdx";
+import MixinsWithInterface from "./mdx/mixins-with-interface.mdx";
+import ThisInProperty from "./mdx/this-in-property.mdx";
+import ManuallyTypingProperty from "./mdx/manually-typing-property.mdx";
+import ThisAndUnknown from "./mdx/this-and-unknown.mdx";
+import UnknownAndIntersections from "./mdx/unknown-and-intersections.mdx";
+import FunctionsWithInterface from "./mdx/functions-with-interface.mdx";
 
 import { AsideNavigationMenu } from "../(shared)/components/ui/aside-navigation-menu";
 
@@ -79,7 +87,7 @@ export default async function Home() {
     <>
       <main className="flex col-span-12 sm:col-span-9 py-8">
         <article className="flex flex-col gap-4 px-4 sm:pr-12 pl-6 xl:pl-0 max-w-full text-justify">
-          <h1 className="opacity-100 font-bold text-2xl text-pretty text-title lg:text-3xl tracking-wide">
+          <h1 className="opacity-100 font-bold text-2xl text-pretty text-title lg:text-3xl tracking-wide text-start">
             Type vs interface
           </h1>
           <p>
@@ -91,7 +99,7 @@ export default async function Home() {
             sempre existiu, por pelo menos dois motivos.
           </p>
           <h4
-            className="opacity-100 my-4 text-xl lg:text-2xl"
+            className="opacity-100 my-4 text-xl lg:text-2xl text-start"
             id="o-comeco-de-tudo"
           >
             {navigationItems[0].title}
@@ -193,7 +201,7 @@ export default async function Home() {
             mais básicas e iremos até as mais avançadas, bora lá?
           </p>
           <h4
-            className="opacity-100 my-4 text-xl lg:text-2xl"
+            className="opacity-100 my-4 text-xl lg:text-2xl text-start"
             id={navigationItems[1].href}
           >
             {navigationItems[1].title}
@@ -225,7 +233,7 @@ export default async function Home() {
             utilizadas com implements.
           </p>
           <h4
-            className="opacity-100 my-4 text-xl lg:text-2xl"
+            className="opacity-100 my-4 text-xl lg:text-2xl text-start"
             id={navigationItems[2].href}
           >
             {navigationItems[2].title}
@@ -272,8 +280,21 @@ export default async function Home() {
             </Link>
             , pra um tipo que pode ser anônimo ou não.
           </p>
+
+          <p>
+            Uma outra pequena diferença visual é como interfaces e types se
+            comportam em mensagens de erro, você pode conferir isso nesse{" "}
+            <Link
+              href="https://www.typescriptlang.org/play/?#code/PTAEGEHsFsAcEsA2BTATqNrLusgzngIYDm+oA7koqIYuYQJ56gCueyoAUCKAC4AWHAHaFcoSADMaQ0PCG80EwgGNkALk6c5C1EtWgAsqOi1QAb06groEbjWg8vVHOKcAvpokshy3vEgyyMr8kEbQJogAFND2YREAlOaW1soBeJAoAHSIkMTRmbbI8e6aPMiZxJmgACqCGKhY6ABGyDnkFFQ0dIzMbBwCwqIccabcYLyQoKjIEmh8kwN8DLAc5PzwwbLMyAAeK77IACYaQSEjUWY2Q-YAjABMAMwALA+gbsVjNXW8yxySoAADaAA0CCaZbPh1XYqXgOIY0ZgmcK0AA0nyaLFhhGY8F4AHJmEJILCWsgZId4NNfIgGFdcIcUTVfgBlZTOWC8T7kAJ42G4eT+GS42QyRaYbCgXAEEguTzeXyCjDBSAAQSE8Ai0Xsl0K9kcziExDeiQs1lAqSE6SyOTy0AKQ2KHk4p1V6s1OuuoHuzwArMagA"
+              className="underline underline-offset-4"
+              target="_blank"
+            >
+              playground.
+            </Link>
+          </p>
+
           <h4
-            className="opacity-100 my-4 text-xl lg:text-2xl"
+            className="opacity-100 my-4 text-xl lg:text-2xl text-start"
             id={navigationItems[3].href}
           >
             {navigationItems[3].title}
@@ -299,7 +320,7 @@ export default async function Home() {
             proposital, falaremos mais sobre em breve.
           </p>
           <h4
-            className="opacity-100 my-4 text-xl lg:text-2xl"
+            className="opacity-100 my-4 text-xl lg:text-2xl text-start"
             id={navigationItems[4].href}
           >
             {navigationItems[4].title}
@@ -343,7 +364,7 @@ export default async function Home() {
           </p>
           <InterfacesWithDerivedPropertyTypes />
           <h4
-            className="opacity-100 my-4 text-xl lg:text-2xl"
+            className="opacity-100 my-4 text-xl lg:text-2xl text-start"
             id={navigationItems[5].href}
           >
             {navigationItems[5].title}
@@ -370,7 +391,7 @@ export default async function Home() {
           </p>
           <InterfaceWithSamePropertyIntersected />
           <h4
-            className="opacity-100 my-4 text-xl lg:text-2xl"
+            className="opacity-100 my-4 text-xl lg:text-2x text-start"
             id={navigationItems[6].href}
           >
             {navigationItems[6].title}
@@ -407,17 +428,18 @@ export default async function Home() {
           </p>
           <InterfaceWithExplicitIndexSignature />
           <h4
-            className="opacity-100 my-4 text-xl lg:text-2xl"
+            className="opacity-100 my-4 text-xl lg:text-2xl text-start"
             id={navigationItems[7].href}
           >
             {navigationItems[7].title}
           </h4>
           <p>
-            É preferível que usemos interface para compor objetos ao invés de
-            type, por questões de performance, já que as relações entre
-            interfaces são cacheadas, inclusive essa performance melhor em
-            interfaces é algo documentado pelo próprio time do typescript, e
-            você pode ver mais sobre isso na &nbsp;
+            O TypeScript foi projetado para que as interfaces sejam verificadas
+            de maneira mais otimizada, é preferível que usemos interface para
+            compor vários objetos ao invés de type, por questões de performance,
+            já que as relações entre interfaces são cacheadas, inclusive essa
+            performance melhor em interfaces é algo documentado pelo próprio
+            time do typescript, e você pode ver mais sobre isso na &nbsp;
             <Link
               href="https://github.com/microsoft/TypeScript/wiki/Performance#preferring-interfaces-over-intersections"
               target="_blank"
@@ -427,9 +449,7 @@ export default async function Home() {
             </Link>
             .
           </p>
-
           <PreferExtendsOverIntersections />
-
           <p>
             Em resumo, quando temos uma interseção com mais de 2 objetos, essa
             diferença de performance começa a ser mais significante, e pra isso
@@ -438,26 +458,283 @@ export default async function Home() {
             mas faz bem levar isso em conta ao escolher entre um ou outro.
           </p>
           <h4
-            className="opacity-100 my-4 text-xl lg:text-2xl"
+            className="opacity-100 my-4 text-xl lg:text-2xl text-start"
             id={navigationItems[8].href}
           >
             {navigationItems[8].title}
           </h4>
-          <p>Work in progress</p>
+          <p>
+            Chegamos na minha parte favorita desse artigo, e na mais
+            complexa/avançada, aquela que não te contam quando você pergunta a
+            diferença entre type vs interface, citarei o termo &apos;Higher
+            Kinded Types&apos;, mas não explicarei com profundidade o que são,
+            esse é um tema que merece um artigo especial só pra ele.
+          </p>
+          <p>
+            Outra diferença importante que pode fazer toda a diferença na
+            escolha entre interfaces e types é que interfaces podem usar o tipo
+            &apos;this&apos; na definição de retorno de funções/métodos e também
+            em suas propriedades, enquanto types não têm essa capacidade.
+          </p>
+          <TypeWithThis />
+          <p>
+            O caso de uso mais comum é a utilização do pattern&nbsp;
+            <Link
+              href="https://www.sitepoint.com/javascript-like-boss-understanding-fluent-apis/"
+              target="_blank"
+              className="underline underline-offset-4"
+            >
+              fluent api
+            </Link>
+            , que é uma maneira de deixar seu código mais legível e fácil de
+            entender, encadeando métodos de uma forma que pareça uma frase ou
+            uma série de instruções.
+          </p>
+          <FluentApiWithInterface />
+          <p>
+            Com &apos;this&apos; também podemos criar mixins, que são
+            classes/objetos que contêm métodos para outras classes/objetos,
+            permitindo a adição de funcionalidade sem usar herança.
+          </p>
+          <MixinsWithInterface />
+
+          <p>
+            Também podemos utilizar o &apos;this&apos; em propriedades da
+            interface, observemos o comportamento abaixo:
+          </p>
+
+          <ThisInProperty />
+
+          <p>
+            Isso faz com que a propriedade &apos;fullName&apos; seja do tipo
+            string, assim como foi definido em name.
+          </p>
+
+          <p>
+            O que é interessante mas inútil, certo? Daria pra manualmente tipar
+            a propriedade &apos;fullName&apos; como string, ou até mesmo
+            referenciar a própria interface, qual a vantagem do
+            &apos;this&apos;?
+          </p>
+
+          <ManuallyTypingProperty />
+
+          <p>
+            Antes, precisamos relembrar um comportamento existente com o tipo
+            unknown: ao ser interseccionado com algum outro tipo, o resultado é
+            sempre o tipo interseccionado, isto é:
+          </p>
+
+          <UnknownAndIntersections />
+
+          <p>
+            A grande vantagem vem ao combinar o comportamento do
+            &apos;this&apos; e unknown + extends, o &apos;this&apos; sempre
+            referencia o último tipo na cadeia de extensões, e qualquer tipo
+            interseccionado com unknown se resolve nele mesmo, permitindo a
+            construção disso:
+          </p>
+
+          <ThisAndUnknown />
+
+          <p>
+            A propriedade &apos;values&apos; é do tipo unknown na interface
+            &apos;User&apos;, já na interface &apos;Admin&apos; ela passa a ser
+            number, já que a propriedade &apos;age&apos; se tornou number.
+          </p>
+
+          <p>
+            E é esse comportamento que bibliotecas aproveitam pra construir
+            Higher Kinded Types, Embora TypeScript não suporte diretamente
+            Higher Kinded Types (HKTs), que são comuns em linguagens como
+            Haskell e Scala, é assim que podemos fazer para simular alguns
+            desses comportamentos.
+          </p>
+
+          <p className="text-start">
+            Higher Kinded Types (HKTs) são tipos que operam sobre outros tipos.
+            Enquanto um tipo normal pode ser&nbsp;
+            <span className="text-highlight">string</span>
+            &nbsp;ou&nbsp;
+            <span className="text-highlight">number</span>, e um tipo genérico
+            pode ser algo como&nbsp;
+            <span className="text-highlight">{"Array<T>"}</span>&nbsp;ou&nbsp;
+            <span className="text-highlight">{"Promise<T>"}</span>, um higher
+            kinded type seria algo como&nbsp;
+            <span className="text-highlight">{"F<T>"}</span>&nbsp;onde&nbsp;
+            <span className="text-highlight">F</span>&nbsp;é um tipo de tipo, ou
+            seja, é a abstração da abstração da abstração 😅.
+          </p>
+
+          <p>Os tipos podem ser categorizados por ordem/nível:</p>
+
+          <ul className="list-disc pl-10 flex flex-col gap-4">
+            <li>
+              <p>
+                Tipos de primeira ordem: são tipos simples como&nbsp;
+                <span className="text-highlight">string</span>,&nbsp;
+                <span className="text-highlight">number</span>,&nbsp;
+                <span className="text-highlight">boolean</span>, etc.
+              </p>
+            </li>
+            <li>
+              <p className="text-start">
+                Tipos parametrizados (ou genéricos): são tipos que recebem
+                outros tipos como parâmetros, como&nbsp;
+                <span className="text-highlight">{"Array<T>"}</span>,&nbsp;
+                <span className="text-highlight">{"Promise<T>"}</span>,&nbsp;
+                <span className="text-highlight">{"Map<K, V>"}</span>, etc.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                Higher kinded types (HKTs): são &apos;tipos de tipos&apos; ou
+                &apos;construtores de tipos&apos;. Eles não são tipos completos
+                por si só, mas precisam de outros tipos para formar um tipo
+                completo
+              </p>
+            </li>
+          </ul>
+
+          <p>Analogamente, isso seria: </p>
+
+          <ul className="list-disc pl-10 flex flex-col gap-4">
+            <li>
+              <p>
+                Um tipo normal é como um valor (ex: 5 ou &apos;hello&apos;).
+              </p>
+            </li>
+            <li>
+              <p>
+                Um tipo genérico é como uma função que recebe valores&nbsp;
+                <var>f</var>
+                <var>(x)</var> = <var>x</var> + 1&nbsp;.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                Um higher kinded type é como uma função que recebe funções
+                &nbsp;
+                <var>g</var>
+                <var>(f)</var> = <var>f</var>
+                <var>(f(x))</var>&nbsp;
+              </p>
+            </li>
+          </ul>
+
+          <p>
+            Por ser deveras um tema mais avançado e complexo, também por ser
+            algo mais nichado (poucas pessoas precisarão usar isso na vida, já
+            que o uso é mais comum em bibliotecas), e dado o tamanho desse
+            artigo, irei parar por aqui e deixar sua curiosidade lhe guiar, caso
+            queira se aprofundar e ver exemplos de casos de uso disso na
+            prática, recomendo que veja o código da biblioteca{" "}
+            <Link
+              href="https://github.com/Effect-TS/effect/blob/main/packages/effect/src/HKT.ts"
+              className="underline underline-offset-4"
+              target="_blank"
+            >
+              effect
+            </Link>
+            &nbsp;e leia esse&nbsp;
+            <Link
+              href="https://dev.to/effect/encoding-of-hkts-in-typescript-5c3"
+              className="underline underline-offset-4"
+              target="_blank"
+            >
+              artigo
+            </Link>
+            &nbsp;do próprio mantenedor da biblioteca falando sobre HKTs.
+          </p>
+
+          <p>
+            Está tudo bem se você não tiver entendido esse último tópico, falha
+            minha, já que eu ainda não consigo simplificar esse tema ao ponto de
+            trazer um exemplo bem simplório que lhe faça entender a utilidade,
+            usuários comuns tendem a não esbarrar nesse tipo de problema, então
+            talvez você não deva se preocupar tanto com isso, como eu havia
+            dito, um artigo especialmente sobre o assunto é necessário, e isso
+            vai ficar pra uma próxima.
+          </p>
+
           <h4
-            className="opacity-100 my-4 text-xl lg:text-2xl"
+            className="opacity-100 my-4 text-xl lg:text-2xl text-start"
             id={navigationItems[9].href}
           >
             {navigationItems[9].title}
           </h4>
-          <p>Work in progress</p>
+          <p>Dito tudo isso, e agora? Devo usar type ou interface?</p>
+          <p>
+            Depende 😁, brincadeiras a parte, existem algumas abordagens que
+            você pode adotar:
+          </p>
+          <ul className="list-disc pl-10 flex flex-col gap-4">
+            <li>
+              <p>
+                Seguir a{" "}
+                <Link
+                  href="https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#differences-between-type-aliases-and-interfaces"
+                  target="_blank"
+                  className="underline underline-offset-4"
+                >
+                  recomendação
+                </Link>{" "}
+                do time do TypeScript, que é utilizar interface até que você
+                precise de features de type.
+              </p>
+            </li>
+            <li>
+              <p>
+                O contrário disso, que é utilizar type até que você precise de
+                features de interface.
+              </p>
+            </li>
+            <li>
+              <p>
+                E, por fim, utilizar sempre interface para definir objetos, e
+                type para todo o resto.
+              </p>
+            </li>
+          </ul>
+
+          <p>
+            Se você estiver construindo uma biblioteca, sugiro que sempre pense
+            primeiro em interface para definir objetos, por causa do seu
+            comportamento de declaration merging, permitindo que usuários da sua
+            biblioteca estendam a interface, mas lembre-se que talvez seus
+            usuários não precisem disso, vai depender da API que você está
+            construindo.
+          </p>
+
           <h4
-            className="opacity-100 my-4 text-xl lg:text-2xl"
+            className="opacity-100 my-4 text-xl lg:text-2xl text-start"
             id={navigationItems[10].href}
           >
             {navigationItems[10].title}
           </h4>
-          <p>Work in progress</p>
+          <p>
+            Primeiramente, muito obrigado por acompanhar até aqui, eu espero de
+            verdade que você tenha aprendido algo novo e saia desse artigo
+            sabendo qual deve usar ou não, particularmente, eu alterno entre a
+            2° e a 3° opção. Se você achou esse artigo útil, compartilhe com
+            alguém, se você tiver alguma dúvida, pode me mandar dm no twitter ou
+            no discord (alvseven). Se notou algo de errado, um ponto de
+            correção, algum detalhe que faltou, por favor não hesite em me
+            contatar
+          </p>
+
+          <p>
+            E pra finalizar, talvez eu tenha mentido, também é possível definir
+            funções com interfaces, mas é algo não tão idiomático e na maioria
+            dos casos você vai encontrar definições de funções utilizando a
+            keyword type, se você voltar no primeiro ponto do artigo, verá que
+            eu disse que nem sempre a keyword type existiu, dessa forma, era
+            comum definir funções com interface, vide exemplo abaixo:
+          </p>
+
+          <FunctionsWithInterface />
         </article>
       </main>
       <AsideNavigationMenu navigationItems={navigationItems} />

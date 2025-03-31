@@ -1,0 +1,12 @@
+```typescript
+ interface CreateUser {
+     (name: string): { id: string; name: string;}
+ }
+
+ const createUser: CreateUser = (name) => {
+     return {
+       id: '1',
+       name,
+     }
+ }
+```
