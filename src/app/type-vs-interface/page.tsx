@@ -422,7 +422,7 @@ export default async function Home() {
           <PreferExtendsOverIntersections />
 
           <p>
-            Essa performance melhor em interfaces é algo inclusive documentado
+            Inclusive essa performance melhor em interfaces é algo documentado
             pelo próprio time do typescript, e você pode ver mais sobre isso na
             &nbsp;
             <Link
