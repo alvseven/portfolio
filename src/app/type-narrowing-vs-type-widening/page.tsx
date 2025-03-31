@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { ComponentProps } from "react";
+import { useEffect, useState, type ComponentProps } from "react";
 
 import Intro from "./mdx/intro.mdx";
 import NarrowingExample from "./mdx/narrowing-example.mdx";
@@ -27,6 +27,27 @@ export default async function Home() {
       withExternalRedirect: true,
     },
   ];
+  const [activeItemIndex, setActiveItemIndex] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const sections = document.querySelectorAll("h4[id]");
+
+      let newActiveIndex = 0;
+      sections.forEach((section, index) => {
+        const sectionTop = section.getBoundingClientRect().top + scrollPosition;
+        if (sectionTop <= scrollPosition + window.innerHeight / 2) {
+          newActiveIndex = index;
+        }
+      });
+
+      setActiveItemIndex(newActiveIndex);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
@@ -199,7 +220,7 @@ export default async function Home() {
           </Link>
         </article>
       </main>
-      <AsideNavigationMenu navigationItems={navigationItems} />
+      <AsideNavigationMenu activeItemIndex={activeItemIndex} navigationItems={navigationItems} />
     </>
   );
 }

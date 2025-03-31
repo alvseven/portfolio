@@ -1,4 +1,4 @@
-import type { ComponentProps } from "react";
+import { useEffect, useState, type ComponentProps } from "react";
 
 import { AsideNavigationMenu } from "../(shared)/components/ui/aside-navigation-menu";
 
@@ -19,6 +19,28 @@ export default async function Home() {
       title: "Considerações",
     },
   ];
+
+  const [activeItemIndex, setActiveItemIndex] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const sections = document.querySelectorAll("h4[id]");
+
+      let newActiveIndex = 0;
+      sections.forEach((section, index) => {
+        const sectionTop = section.getBoundingClientRect().top + scrollPosition;
+        if (sectionTop <= scrollPosition + window.innerHeight / 2) {
+          newActiveIndex = index;
+        }
+      });
+
+      setActiveItemIndex(newActiveIndex);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
@@ -169,7 +191,7 @@ export default async function Home() {
           </p>
         </article>
       </main>
-      <AsideNavigationMenu navigationItems={navigationItems} />
+      <AsideNavigationMenu activeItemIndex={activeItemIndex} navigationItems={navigationItems} />
     </>
   );
 }
