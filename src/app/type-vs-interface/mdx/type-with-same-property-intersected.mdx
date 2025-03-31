@@ -1,0 +1,20 @@
+```typescript
+ type Admin = {
+   name: string;
+   document: string;
+ };
+
+ type Moderator = {
+   age: number;
+   document: number;
+ };
+
+ type User = Admin & Moderator
+
+ const user: User = {
+   name: 'alves',
+   age: 22,
+   document: '1234' // Type 'string' is not assignable to type 'never'.
+   // since string & number is equals to never
+ };
+```

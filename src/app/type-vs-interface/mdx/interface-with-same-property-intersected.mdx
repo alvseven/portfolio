@@ -1,0 +1,17 @@
+```typescript
+ interface Admin {
+   name: string;
+   document: string;
+ };
+
+ interface Moderator {
+   document: number;
+   age: number;
+ };
+
+ interface User extends Admin, Moderator {} 
+ // Interface 'User' cannot simultaneously extend types 'Admin' 
+ // and 'Moderator'.
+ // Named property 'document' of types 'Admin' and 'Moderator'
+ // are not identical. 
+```

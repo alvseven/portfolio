@@ -16,6 +16,8 @@ import InterfacesWithDerivedPropertyTypes from "./mdx/interfaces-with-derived-pr
 import TypesHasImplicitIndexSignature from "./mdx/types-has-implicit-index-signature.mdx";
 import InterfacesDoesNotHaveImplicitIndexSignature from "./mdx/interfaces-does-not-has-implicit-index-signature.mdx";
 import InterfaceWithExplicitIndexSignature from "./mdx/interface-with-explicit-index-signature.mdx";
+import TypeWithSamePropertyIntersected from "./mdx/type-with-same-property-intersected.mdx";
+import InterfaceWithSamePropertyIntersected from "./mdx/interface-with-same-property-intersected.mdx";
 
 import { AsideNavigationMenu } from "../(shared)/components/ui/aside-navigation-menu";
 
@@ -368,17 +370,31 @@ export default async function Home() {
             {navigationItems[5].title}
           </h4>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto,
-            saepe magnam. Nesciunt dolores impedit fugiat, voluptate, laudantium
-            recusandae illum laboriosam qui tempore id sed, tenetur harum sequi
-            iste porro ipsam.
+            Podemos compor objetos de formas diferentes, usando a keyword type,
+            precisamos utilizar o operador &apos;&&apos;, que cria uma
+            interseção, já com interface, utilizamos a keyword
+            &apos;extends&apos;.
           </p>
+
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto,
-            saepe magnam. Nesciunt dolores impedit fugiat, voluptate, laudantium
-            recusandae illum laboriosam qui tempore id sed, tenetur harum sequi
-            iste porro ipsam.
+            Apesar de propósitos parecidos, existe uma diferença entre
+            &apos;&&apos; e &apos;extends&apos;, ao compor objetos, uma
+            interseção cria um novo objeto, sem fazer nenhuma comparação de
+            compatibilidade de tipos das propriedades, em casos em que dois ou
+            mais objetos possuem uma propriedade com o mesmo nome, os seus tipos
+            serão interseccionados, e isso frequentemente resulta em never.
           </p>
+
+          <TypeWithSamePropertyIntersected />
+
+          <p>
+            Já com interfaces, as propriedades com os mesmos nomes precisam ter
+            os mesmos tipos. Na maioria dos casos, esse comportamento é
+            especialmente útil, mas depende do seu cenário.
+          </p>
+
+          <InterfaceWithSamePropertyIntersected />
+
           <h4
             className="opacity-100 my-4 text-xl lg:text-2xl"
             id={navigationItems[6].href}
@@ -465,12 +481,27 @@ export default async function Home() {
           >
             {navigationItems[9].title}
           </h4>
+
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit
+            quas culpa quod mollitia perferendis commodi eum amet maiores
+            asperiores dolores, reiciendis eius excepturi ipsa adipisci!
+            Architecto autem non magni libero?
+          </p>
+
           <h4
             className="opacity-100 my-4 text-xl lg:text-2xl"
             id={navigationItems[10].href}
           >
             {navigationItems[10].title}
           </h4>
+
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
+            consequatur vitae eligendi quidem inventore id nemo officiis quos
+            modi aspernatur voluptatibus error perspiciatis accusamus nostrum,
+            blanditiis quasi cumque, magnam incidunt!
+          </p>
         </article>
       </main>
       <AsideNavigationMenu navigationItems={navigationItems} />
