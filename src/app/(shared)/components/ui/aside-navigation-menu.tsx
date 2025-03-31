@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ExternalRedirectIcon } from "@/app/(shared)/components/icons/external-redirect";
 
 type NavigationItem = {
-  href: `#${string}` | `http://${string}` | `https://${string}`;
+  href: string;
   title: string;
   withExternalRedirect?: true;
 };
@@ -26,7 +26,9 @@ export const AsideNavigationMenu = ({
             >
               <Link
                 className="font-medium group"
-                href={item.href}
+                href={
+                  item.href.startsWith("http") ? item.href : `#${item.href}`
+                }
                 target={item.withExternalRedirect ? "_blank" : "_self"}
               >
                 <span className="group-hover:text-title block text-sm transform transition-transform group-hover:translate-x-[3px] ease-in-out">

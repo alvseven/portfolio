@@ -20,49 +20,57 @@ import InterfaceWithExplicitIndexSignature from "./mdx/interface-with-explicit-i
 import { AsideNavigationMenu } from "../(shared)/components/ui/aside-navigation-menu";
 
 export default async function Home() {
-  const navigationItems: ComponentProps<
-    typeof AsideNavigationMenu
-  >["navigationItems"] = [
+  const navigationItems = [
     {
       href: "#o-comeco-de-tudo",
       title: "O começo de tudo",
     },
     {
-      href: "#hover-em-type-vs-em-interface",
-      title: "Hover em type vs em interface",
-    },
-    {
-      href: "#interfaces-so-podem-definir-objetos-types-podem-definir-qualquer-tipo",
+      href: "interfaces-so-podem-definir-objetos-types-podem-definir-qualquer-tipo",
       title:
         "Interfaces só podem definir objetos, types podem definir qualquer tipo",
     },
     {
-      href: "#interfaces-podem-ser-redeclaradas-types-nao",
+      href: "hover-em-type-vs-em-interface",
+      title: "Hover em type vs em interface",
+    },
+    {
+      href: "interfaces-podem-ser-redeclaradas-types-nao",
       title: "Interfaces podem ser redeclaradas, types não",
     },
     {
-      href: "#interfaces-nao-podem-ser-utilizadas-para-criar-tipos-derivados",
+      href: "interfaces-nao-podem-ser-utilizadas-para-criar-tipos-derivados",
       title: "Interfaces não podem ser utilizadas para criar tipos derivados",
     },
     {
-      href: "#interfaces-se-comportam-de-maneira-diferente-de-types-ao-compor-objetos",
+      href: "interfaces-se-comportam-de-maneira-diferente-de-types-ao-compor-objetos",
       title:
         "Interfaces se comportam de maneira diferente de types ao compor objetos",
     },
     {
-      href: "#types-tem-assinatura-implicita-de-indice",
+      href: "types-tem-assinatura-implicita-de-indice",
       title: "Types têm assinatura implícita de índice",
     },
     {
-      href: "#interfaces-tem-melhor-performance-do-que-types-ao-compor-varios-objetos",
+      href: "interfaces-tem-melhor-performance-do-que-types-ao-compor-varios-objetos",
       title:
         "Interfaces têm melhor performance do que types ao compor vários objetos",
     },
     {
-      href: "#interfaces-tem-this-e-isso-possibilita-a-criacao-de-higher-kinded-types",
+      href: "interfaces-tem-this-e-isso-possibilita-a-criacao-de-higher-kinded-types",
       title: `Interfaces têm ${"this"} e isso possibilita a criação de Higher Kinded Types`,
     },
-  ];
+    {
+      href: "qual-usar",
+      title: "Usar type ou interface?",
+    },
+    {
+      href: "consideracoes-finais",
+      title: "Considerações finais",
+    },
+  ] as const satisfies ComponentProps<
+    typeof AsideNavigationMenu
+  >["navigationItems"];
 
   return (
     <>
@@ -83,7 +91,7 @@ export default async function Home() {
             className="opacity-100 my-4 text-xl lg:text-2xl"
             id="o-comeco-de-tudo"
           >
-            O começo de tudo
+            {navigationItems[0].title}
           </h4>
           <p>
             Um ponto que sempre é importante ao olhar pro typescript é analisar
@@ -190,10 +198,9 @@ export default async function Home() {
           </p>
           <h4
             className="opacity-100 my-4 text-xl lg:text-2xl"
-            id="interfaces-so-podem-definir-objetos-types-podem-definir-qualquer-tipo"
+            id={navigationItems[1].href}
           >
-            Interfaces só podem definir objetos, types podem definir qualquer
-            tipo
+            {navigationItems[1].title}
           </h4>
           <p>
             Essa é uma das principais diferenças, interfaces servem
@@ -225,9 +232,9 @@ export default async function Home() {
           </p>
           <h4
             className="opacity-100 my-4 text-xl lg:text-2xl"
-            id="hover-em-type-vs-em-interface"
+            id={navigationItems[2].href}
           >
-            Hover em interface vs em type
+            {navigationItems[2].title}
           </h4>
           <p>
             A primeira diferença visual que podemos notar é que o hover em
@@ -274,9 +281,9 @@ export default async function Home() {
           </p>
           <h4
             className="opacity-100 my-4 text-xl lg:text-2xl"
-            id="interfaces-podem-ser-redeclaradas-types-nao"
+            id={navigationItems[3].href}
           >
-            Interfaces podem ser redeclaradas, types não
+            {navigationItems[3].title}
           </h4>
           <p>
             Interfaces podem ser declaradas múltiplas vezes e o TypeScript vai
@@ -305,9 +312,9 @@ export default async function Home() {
 
           <h4
             className="opacity-100 my-4 text-xl lg:text-2xl"
-            id="interfaces-nao-podem-ser-utilizadas-para-criar-tipos-derivados"
+            id={navigationItems[4].href}
           >
-            Interfaces não podem ser utilizadas para criar tipos derivados
+            {navigationItems[4].title}
           </h4>
           <p>
             Uma das coisas que sempre digo é que quanto menos tipos manualmente
@@ -356,10 +363,9 @@ export default async function Home() {
 
           <h4
             className="opacity-100 my-4 text-xl lg:text-2xl"
-            id="interfaces-se-comportam-de-maneira-diferente-de-types-ao-compor-objetos"
+            id={navigationItems[5].href}
           >
-            Interfaces se comportam de maneira diferente de types ao compor
-            objetos
+            {navigationItems[5].title}
           </h4>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto,
@@ -375,9 +381,9 @@ export default async function Home() {
           </p>
           <h4
             className="opacity-100 my-4 text-xl lg:text-2xl"
-            id="types-tem-assinatura-implicita-de-indice"
+            id={navigationItems[6].href}
           >
-            Types têm assinatura implícita de índice
+            {navigationItems[6].title}
           </h4>
           <p>
             Um comportamento sutil que difere entre type e interface é que types
@@ -418,10 +424,9 @@ export default async function Home() {
 
           <h4
             className="opacity-100 my-4 text-xl lg:text-2xl"
-            id="interfaces-tem-melhor-performance-do-que-types-ao-compor-varios-objetos"
+            id={navigationItems[7].href}
           >
-            Interfaces têm melhor performance do que types ao compor vários
-            objetos
+            {navigationItems[7].title}
           </h4>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto,
@@ -437,10 +442,9 @@ export default async function Home() {
           </p>
           <h4
             className="opacity-100 my-4 text-xl lg:text-2xl"
-            id="interfaces-tem-this-e-isso-possibilita-a-criacao-de-higher-kinded-types"
+            id={navigationItems[8].href}
           >
-            Interfaces têm &quot;this&quot; e isso possibilita a criação de
-            Higher Kinded Types
+            {navigationItems[8].title}
           </h4>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto,
@@ -454,6 +458,19 @@ export default async function Home() {
             recusandae illum laboriosam qui tempore id sed, tenetur harum sequi
             iste porro ipsam.
           </p>
+
+          <h4
+            className="opacity-100 my-4 text-xl lg:text-2xl"
+            id={navigationItems[9].href}
+          >
+            {navigationItems[9].title}
+          </h4>
+          <h4
+            className="opacity-100 my-4 text-xl lg:text-2xl"
+            id={navigationItems[10].href}
+          >
+            {navigationItems[10].title}
+          </h4>
         </article>
       </main>
       <AsideNavigationMenu navigationItems={navigationItems} />
