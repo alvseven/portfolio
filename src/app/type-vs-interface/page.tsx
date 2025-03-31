@@ -413,18 +413,11 @@ export default async function Home() {
             {navigationItems[7].title}
           </h4>
           <p>
-            Quando temos uma interseção com mais de 2 objetos, é preferível que
-            usemos interface para compor esses objetos ao invés de type, por
-            questões de performance, já que as relações entre interfaces são
-            cacheadas.
-          </p>
-
-          <PreferExtendsOverIntersections />
-
-          <p>
-            Inclusive essa performance melhor em interfaces é algo documentado
-            pelo próprio time do typescript, e você pode ver mais sobre isso na
-            &nbsp;
+            É preferível que usemos interface para compor objetos ao invés de
+            type, por questões de performance, já que as relações entre
+            interfaces são cacheadas, inclusive essa performance melhor em
+            interfaces é algo documentado pelo próprio time do typescript, e
+            você pode ver mais sobre isso na &nbsp;
             <Link
               href="https://github.com/microsoft/TypeScript/wiki/Performance#preferring-interfaces-over-intersections"
               target="_blank"
@@ -433,6 +426,16 @@ export default async function Home() {
               wiki do typescript
             </Link>
             .
+          </p>
+
+          <PreferExtendsOverIntersections />
+
+          <p>
+            Em resumo, quando temos uma interseção com mais de 2 objetos, essa
+            diferença de performance começa a ser mais significante, e pra isso
+            ser um problema é algo que precisa acontecer várias vezes, não
+            precisa ir refatorar suas interseções para usar interfaces (ainda),
+            mas faz bem levar isso em conta ao escolher entre um ou outro.
           </p>
           <h4
             className="opacity-100 my-4 text-xl lg:text-2xl"
