@@ -444,36 +444,14 @@ export default async function Home() {
           >
             {navigationItems[7].title}
           </h4>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto,
-            saepe magnam. Nesciunt dolores impedit fugiat, voluptate, laudantium
-            recusandae illum laboriosam qui tempore id sed, tenetur harum sequi
-            iste porro ipsam.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto,
-            saepe magnam. Nesciunt dolores impedit fugiat, voluptate, laudantium
-            recusandae illum laboriosam qui tempore id sed, tenetur harum sequi
-            iste porro ipsam.
-          </p>
+          <p>Work in progress</p>
           <h4
             className="opacity-100 my-4 text-xl lg:text-2xl"
             id={navigationItems[8].href}
           >
             {navigationItems[8].title}
           </h4>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto,
-            saepe magnam. Nesciunt dolores impedit fugiat, voluptate, laudantium
-            recusandae illum laboriosam qui tempore id sed, tenetur harum sequi
-            iste porro ipsam.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto,
-            saepe magnam. Nesciunt dolores impedit fugiat, voluptate, laudantium
-            recusandae illum laboriosam qui tempore id sed, tenetur harum sequi
-            iste porro ipsam.
-          </p>
+          <p>Work in progress</p>
 
           <h4
             className="opacity-100 my-4 text-xl lg:text-2xl"
@@ -482,12 +460,7 @@ export default async function Home() {
             {navigationItems[9].title}
           </h4>
 
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit
-            quas culpa quod mollitia perferendis commodi eum amet maiores
-            asperiores dolores, reiciendis eius excepturi ipsa adipisci!
-            Architecto autem non magni libero?
-          </p>
+          <p>Work in progress</p>
 
           <h4
             className="opacity-100 my-4 text-xl lg:text-2xl"
@@ -496,12 +469,7 @@ export default async function Home() {
             {navigationItems[10].title}
           </h4>
 
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
-            consequatur vitae eligendi quidem inventore id nemo officiis quos
-            modi aspernatur voluptatibus error perspiciatis accusamus nostrum,
-            blanditiis quasi cumque, magnam incidunt!
-          </p>
+          <p>Work in progress</p>
         </article>
       </main>
       <AsideNavigationMenu navigationItems={navigationItems} />
