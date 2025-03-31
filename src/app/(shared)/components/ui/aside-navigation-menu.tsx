@@ -9,7 +9,7 @@ type NavigationItem = {
 };
 
 type AsideNavigationMenuProps = {
-  navigationItems: NavigationItem[];
+  navigationItems: ReadonlyArray<NavigationItem>;
 };
 
 export const AsideNavigationMenu = ({
