@@ -413,10 +413,10 @@ export default async function Home() {
             {navigationItems[7].title}
           </h4>
           <p>
-            Quando temos uma extensão/interseção com mais de 2 objetos, tende a
-            ser preferível que usemos interface para compor esses objetos ao
-            invés de type, por questões de performance, já que as relações entre
-            interfaces são cacheadas.
+            Quando temos uma interseção com mais de 2 objetos, é preferível que
+            usemos interface para compor esses objetos ao invés de type, por
+            questões de performance, já que as relações entre interfaces são
+            cacheadas.
           </p>
 
           <PreferExtendsOverIntersections />
