@@ -9,7 +9,7 @@ type NavigationItem = {
 
 type AsideNavigationMenuProps = {
   navigationItems: ReadonlyArray<NavigationItem>;
-  activeItemIndex: number; // New prop to track the active item
+  activeItemIndex: number;
 };
 
 export const AsideNavigationMenu = ({
@@ -30,7 +30,7 @@ export const AsideNavigationMenu = ({
             ></div>
           </div>
         </div>
-        <div className="mt-4"> {/* Add this div with margin-top */}
+        <div className="mt-4">
           <ul className="flex flex-col gap-4 py-4 w-full max-h-[80vh] overflow-y-auto pr-4 scrollbar">
             {navigationItems.map((item, index) => (
               <li

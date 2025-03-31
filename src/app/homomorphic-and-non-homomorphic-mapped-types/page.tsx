@@ -8,6 +8,7 @@ import IsomorphicMappedTypeExample from "./mdx/isomorphic-mapped-type-example.md
 import { AsideNavigationMenu } from "../(shared)/components/ui/aside-navigation-menu";
 
 import { ExternalRedirectIcon } from "@/app/(shared)/components/icons/external-redirect";
+import { useScrollSpy } from "@/hooks/article-progress";
 
 export default async function Home() {
   const navigationItems: ComponentProps<
@@ -28,27 +29,7 @@ export default async function Home() {
     },
   ];
    
-  const [activeItemIndex, setActiveItemIndex] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      const sections = document.querySelectorAll("h4[id]");
-
-      let newActiveIndex = 0;
-      sections.forEach((section, index) => {
-        const sectionTop = section.getBoundingClientRect().top + scrollPosition;
-        if (sectionTop <= scrollPosition + window.innerHeight / 2) {
-          newActiveIndex = index;
-        }
-      });
-
-      setActiveItemIndex(newActiveIndex);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const { activeItemIndex } = useScrollSpy()
 
   return (
     <>
