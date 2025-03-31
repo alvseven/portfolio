@@ -722,7 +722,7 @@ export default async function Home() {
             alguém, se você tiver alguma dúvida, pode me mandar dm no twitter ou
             no discord (alvseven). Se notou algo de errado, um ponto de
             correção, algum detalhe que faltou, por favor não hesite em me
-            contatar
+            contatar.
           </p>
 
           <p>
