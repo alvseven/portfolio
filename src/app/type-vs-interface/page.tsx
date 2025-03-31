@@ -7,8 +7,8 @@ import AliasedTypeCannotBeAnObjectLiteral from "./mdx/aliased-type-cannot-be-an-
 import TypeWithImplements from "./mdx/a-class-may-only-implement-another-class-or-interface.mdx";
 import InterfaceDeclarationMerging from "./mdx/interface-declaration-merging.mdx";
 import TypeDeclarationMerging from "./mdx/type-declaration-merging.mdx";
-import InterfaceHover from "./interface-hover.png";
-import TypeHover from "./type-hover.png";
+import InterfaceHover from "./(assets)/interface-hover.png";
+import TypeHover from "./(assets)/type-hover.png";
 import InterfaceWithUnions from "./mdx/interface-with-unions.mdx";
 import DerivedTypesWithType from "./mdx/derived-types-with-type.mdx";
 import DerivedTypesWithInterface from "./mdx/derived-types-with-interface.mdx";
