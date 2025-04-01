@@ -29,6 +29,7 @@ import UnknownAndIntersections from "./mdx/unknown-and-intersections.mdx";
 import FunctionsWithInterface from "./mdx/functions-with-interface.mdx";
 
 import { AsideNavigationMenu } from "../(shared)/components/ui/aside-navigation-menu";
+import { JsonLd } from "../(shared)/components/core/json-ld";
 
 export default async function Home() {
   const navigationItems = [
@@ -738,6 +739,29 @@ export default async function Home() {
         </article>
       </main>
       <AsideNavigationMenu navigationItems={navigationItems} />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "TechArticle",
+          headline: "TypeScript: Type vs Interface - Uma Análise Profunda",
+          description:
+            "Descubra as diferenças entre types e interfaces no TypeScript com exemplos práticos.",
+          author: {
+            "@type": "Person",
+            name: "Alves",
+            url: "https://alvseven.com",
+          },
+          publisher: {
+            "@type": "Organization",
+            name: "Alvseven",
+            logo: {
+              "@type": "ImageObject",
+              url: "https://www.alvseven.com/icon.ico",
+            },
+          },
+          datePublished: "2025-04-01T00:00:00.000Z",
+        }}
+      />
     </>
   );
 }
