@@ -199,7 +199,7 @@ export default async function Home() {
             </Link>
             , mas com certeza não todas elas, agora finalmente entraremos no
             assunto, explicarei as diferenças, começaremos com as diferenças
-            mais básicas e iremos até as mais avançadas, bora lá?
+            mais básicas e iremos até as mais avançadas.
           </p>
           <h4
             className="opacity-100 my-4 text-xl lg:text-2xl text-start"
