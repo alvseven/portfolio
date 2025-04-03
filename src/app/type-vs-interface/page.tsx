@@ -100,7 +100,7 @@ export default async function Home() {
             sempre existiu, por pelo menos dois motivos.
           </p>
           <h4
-            className="opacity-100 my-2 text-xl lg:text-2xl text-start"
+            className="opacity-100 mt-3 mb-2 text-xl lg:text-2xl text-start"
             id="o-comeco-de-tudo"
           >
             {navigationItems[0].title}
@@ -202,7 +202,7 @@ export default async function Home() {
             mais básicas e iremos até as mais avançadas.
           </p>
           <h4
-            className="opacity-100 my-2 text-xl lg:text-2xl text-start"
+            className="opacity-100 mt-3 mb-2 text-xl lg:text-2xl text-start"
             id={navigationItems[1].href}
           >
             {navigationItems[1].title}
@@ -234,7 +234,7 @@ export default async function Home() {
             utilizadas com implements.
           </p>
           <h4
-            className="opacity-100 my-2 text-xl lg:text-2xl text-start"
+            className="opacity-100 mt-3 mb-2 text-xl lg:text-2xl text-start"
             id={navigationItems[2].href}
           >
             {navigationItems[2].title}
@@ -295,7 +295,7 @@ export default async function Home() {
           </p>
 
           <h4
-            className="opacity-100 my-2 text-xl lg:text-2xl text-start"
+            className="opacity-100 mt-3 mb-2 text-xl lg:text-2xl text-start"
             id={navigationItems[3].href}
           >
             {navigationItems[3].title}
@@ -321,7 +321,7 @@ export default async function Home() {
             proposital, falaremos mais sobre em breve.
           </p>
           <h4
-            className="opacity-100 my-2 text-xl lg:text-2xl text-start"
+            className="opacity-100 mt-3 mb-2 text-xl lg:text-2xl text-start"
             id={navigationItems[4].href}
           >
             {navigationItems[4].title}
@@ -365,7 +365,7 @@ export default async function Home() {
           </p>
           <InterfacesWithDerivedPropertyTypes />
           <h4
-            className="opacity-100 my-2 text-xl lg:text-2xl text-start"
+            className="opacity-100 mt-3 mb-2 text-xl lg:text-2xl text-start"
             id={navigationItems[5].href}
           >
             {navigationItems[5].title}
@@ -392,7 +392,7 @@ export default async function Home() {
           </p>
           <InterfaceWithSamePropertyIntersected />
           <h4
-            className="opacity-100 my-2 text-xl lg:text-2x text-start"
+            className="opacity-100 mt-3 mb-2 text-xl lg:text-2x text-start"
             id={navigationItems[6].href}
           >
             {navigationItems[6].title}
@@ -429,7 +429,7 @@ export default async function Home() {
           </p>
           <InterfaceWithExplicitIndexSignature />
           <h4
-            className="opacity-100 my-2 text-xl lg:text-2xl text-start"
+            className="opacity-100 mt-3 mb-2 text-xl lg:text-2xl text-start"
             id={navigationItems[7].href}
           >
             {navigationItems[7].title}
@@ -459,7 +459,7 @@ export default async function Home() {
             mas faz bem levar isso em conta ao escolher entre um ou outro.
           </p>
           <h4
-            className="opacity-100 my-2 text-xl lg:text-2xl text-start"
+            className="opacity-100 mt-3 mb-2 text-xl lg:text-2xl text-start"
             id={navigationItems[8].href}
           >
             {navigationItems[8].title}
@@ -661,7 +661,7 @@ export default async function Home() {
           </p>
 
           <h4
-            className="opacity-100 my-2 text-xl lg:text-2xl text-start"
+            className="opacity-100 mt-3 mb-2 text-xl lg:text-2xl text-start"
             id={navigationItems[9].href}
           >
             {navigationItems[9].title}
@@ -710,7 +710,7 @@ export default async function Home() {
           </p>
 
           <h4
-            className="opacity-100 my-2 text-xl lg:text-2xl text-start"
+            className="opacity-100 mt-3 mb-2 text-xl lg:text-2xl text-start"
             id={navigationItems[10].href}
           >
             {navigationItems[10].title}
