@@ -3,12 +3,14 @@ import type { ComponentProps } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
+import Banner from "./(assets)/banner.png";
+import InterfaceHover from "./(assets)/interface-hover.png";
+import TypeHover from "./(assets)/type-hover.png";
+
 import AliasedTypeCannotBeAnObjectLiteral from "./mdx/aliased-type-cannot-be-an-object-literal.mdx";
 import TypeWithImplements from "./mdx/a-class-may-only-implement-another-class-or-interface.mdx";
 import InterfaceDeclarationMerging from "./mdx/interface-declaration-merging.mdx";
 import TypeDeclarationMerging from "./mdx/type-declaration-merging.mdx";
-import InterfaceHover from "./(assets)/interface-hover.png";
-import TypeHover from "./(assets)/type-hover.png";
 import InterfaceWithUnions from "./mdx/interface-with-unions.mdx";
 import DerivedTypesWithType from "./mdx/derived-types-with-type.mdx";
 import DerivedTypesWithInterface from "./mdx/derived-types-with-interface.mdx";
@@ -30,11 +32,13 @@ import FunctionsWithInterface from "./mdx/functions-with-interface.mdx";
 
 import { AsideNavigationMenu } from "../(shared)/components/ui/aside-navigation-menu";
 import { JsonLd } from "../(shared)/components/core/json-ld";
+import { Breadcrumbs } from "../(shared)/components/ui/breadcrumbs";
+import { ArticleMeta } from "../(shared)/components/ui/article-meta";
 
 export default async function Home() {
   const navigationItems = [
     {
-      href: "#o-comeco-de-tudo",
+      href: "o-comeco-de-tudo",
       title: "O começo de tudo",
     },
     {
@@ -84,13 +88,37 @@ export default async function Home() {
     typeof AsideNavigationMenu
   >["navigationItems"];
 
+  const articleMeta: ComponentProps<typeof ArticleMeta> = {
+    title: "Type vs interface",
+    description:
+      "Você vai se surpreender com o que encontrei sobre Type Vs Interface. Olha esse artigo! 🤯",
+    createdAt: "01/04/2025",
+    readingTime: "10 min de leitura",
+    coverImage: Banner,
+    coverAlt: "TypeScript: Type vs Interface",
+  };
+
+  const breadcrumbItems: ComponentProps<typeof Breadcrumbs>["items"] = [
+    { label: "Home", href: "/" },
+    { label: "Type vs interface" },
+  ];
+
   return (
     <>
       <main className="flex col-span-12 sm:col-span-9 py-8">
         <article className="flex flex-col gap-4 px-4 sm:pr-12 pl-6 xl:pl-0 max-w-full">
-          <h1 className="opacity-100 font-bold text-2xl text-pretty text-title lg:text-3xl tracking-wide text-start">
-            Type vs interface
-          </h1>
+          <Breadcrumbs items={breadcrumbItems} className="mb-6" />
+
+          <ArticleMeta
+            description={articleMeta.description}
+            title={articleMeta.title}
+            createdAt={articleMeta.createdAt}
+            readingTime={articleMeta.readingTime}
+            coverImage={articleMeta.coverImage}
+            coverAlt={articleMeta.coverAlt}
+            className="mb-6"
+          />
+
           <p>
             Sim, é mais um artigo sobre type vs interface, quando usar cada um e
             etc, mas eu te prometo que esse vai ser diferente de todos que você
@@ -759,7 +787,9 @@ export default async function Home() {
               url: "https://www.alvseven.com/icon.ico",
             },
           },
-          datePublished: "2025-04-01T00:00:00.000Z",
+          datePublished: articleMeta.createdAt,
+          dateModified: articleMeta.createdAt,
+          image: articleMeta.coverImage,
         }}
       />
     </>
