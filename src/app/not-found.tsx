@@ -8,28 +8,16 @@ import { useEffect, useState } from "react";
 
 type Particle = {
   id: number;
-  type: "any" | "unknown" | "never";
   x: number;
   y: number;
   delay: number;
   duration: number;
 };
 
-const TypeParticle = ({
-  type,
-  delay,
-  duration,
-  x,
-  y,
-}: Omit<Particle, "id">) => {
-  const types = ["any", "unknown", "never"];
-  const colors = ["text-red-400", "text-blue-400", "text-yellow-400"];
-  const typeIndex = types.indexOf(type);
-  const color = colors[typeIndex];
-
+const TypeParticle = ({ delay, duration, x, y }: Omit<Particle, "id">) => {
   return (
     <motion.div
-      className={`absolute text-xs sm:text-sm font-mono ${color} opacity-70 pointer-events-none`}
+      className={`absolute text-xs sm:text-sm font-mono text-blue-400 opacity-70 pointer-events-none`}
       initial={{
         x: x,
         y: y,
@@ -50,14 +38,13 @@ const TypeParticle = ({
         repeatDelay: Math.random() * 2,
       }}
     >
-      {type}
+      {"undefined"}
     </motion.div>
   );
 };
 
 const TypeGalaxy = () => {
   const [particles, setParticles] = useState<Particle[]>([]);
-  const types = ["any", "unknown", "never"] as const;
 
   useEffect(() => {
     const createParticles = () => {
@@ -68,7 +55,6 @@ const TypeGalaxy = () => {
       const newParticles = Array.from({ length: particleCount }).map(
         (_, i) => ({
           id: i,
-          type: types[Math.floor(Math.random() * types.length)],
           x: Math.random() * width,
           y: Math.random() * height + height * 0.2,
           delay: Math.random() * 5,
@@ -91,7 +77,6 @@ const TypeGalaxy = () => {
       {particles.map((particle) => (
         <TypeParticle
           key={particle.id}
-          type={particle.type}
           delay={particle.delay}
           duration={particle.duration}
           x={particle.x}
