@@ -1,4 +1,6 @@
-import type { ComponentProps } from "react";
+'use client'
+
+import { useEffect, type ComponentProps } from "react";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -31,11 +33,13 @@ import UnknownAndIntersections from "./mdx/unknown-and-intersections.mdx";
 import FunctionsWithInterface from "./mdx/functions-with-interface.mdx";
 
 import { AsideNavigationMenu } from "../(shared)/components/ui/aside-navigation-menu";
+import { useState } from "react";
+import { useScrollSpy } from "@/hooks/article-progress";
 import { JsonLd } from "../(shared)/components/core/json-ld";
 import { Breadcrumbs } from "../(shared)/components/ui/breadcrumbs";
 import { ArticleMeta } from "../(shared)/components/ui/article-meta";
 
-export default async function Home() {
+export default function Home() {
   const navigationItems = [
     {
       href: "o-comeco-de-tudo",
@@ -87,6 +91,8 @@ export default async function Home() {
   ] as const satisfies ComponentProps<
     typeof AsideNavigationMenu
   >["navigationItems"];
+
+  const { activeItemIndex } = useScrollSpy()
 
   const articleMeta: ComponentProps<typeof ArticleMeta> = {
     title: "Type vs interface",
@@ -766,7 +772,8 @@ export default async function Home() {
           <FunctionsWithInterface />
         </article>
       </main>
-      <AsideNavigationMenu navigationItems={navigationItems} />
+      
+      <AsideNavigationMenu activeItemIndex={activeItemIndex} navigationItems={navigationItems} />
       <JsonLd
         data={{
           "@context": "https://schema.org",
