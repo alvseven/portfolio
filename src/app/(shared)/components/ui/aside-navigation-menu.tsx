@@ -22,14 +22,6 @@ export const AsideNavigationMenu = ({
   return (
     <aside className="md:block hidden mt-8 lg:ml-4 px-4 py-2 min-w-fit lg:min-w-[21rem] font-sans">
       <div className="md:block top-24 sticky border-slate-700 hidden pr-8 border-l border-dashed ">
-        <div className="ml-2 mb-4">
-          <div className="h-2 bg-slate-200 rounded-full overflow-hidden">
-            <div
-              className="h-full bg-blue-500 rounded-full transition-width duration-300 ease-in-out"
-              style={{ width: `${progressPercentage}%` }}
-            ></div>
-          </div>
-        </div>
         <div className="mt-4">
           <ul className="flex flex-col gap-4 py-4 w-full max-h-[80vh] overflow-y-auto pr-4 scrollbar">
             {navigationItems.map((item, index) => (
