@@ -5,12 +5,14 @@ import { useEffect, type ComponentProps } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
+import Banner from "./(assets)/banner.png";
+import InterfaceHover from "./(assets)/interface-hover.png";
+import TypeHover from "./(assets)/type-hover.png";
+
 import AliasedTypeCannotBeAnObjectLiteral from "./mdx/aliased-type-cannot-be-an-object-literal.mdx";
 import TypeWithImplements from "./mdx/a-class-may-only-implement-another-class-or-interface.mdx";
 import InterfaceDeclarationMerging from "./mdx/interface-declaration-merging.mdx";
 import TypeDeclarationMerging from "./mdx/type-declaration-merging.mdx";
-import InterfaceHover from "./(assets)/interface-hover.png";
-import TypeHover from "./(assets)/type-hover.png";
 import InterfaceWithUnions from "./mdx/interface-with-unions.mdx";
 import DerivedTypesWithType from "./mdx/derived-types-with-type.mdx";
 import DerivedTypesWithInterface from "./mdx/derived-types-with-interface.mdx";
@@ -33,11 +35,14 @@ import FunctionsWithInterface from "./mdx/functions-with-interface.mdx";
 import { AsideNavigationMenu } from "../(shared)/components/ui/aside-navigation-menu";
 import { useState } from "react";
 import { useScrollSpy } from "@/hooks/article-progress";
+import { JsonLd } from "../(shared)/components/core/json-ld";
+import { Breadcrumbs } from "../(shared)/components/ui/breadcrumbs";
+import { ArticleMeta } from "../(shared)/components/ui/article-meta";
 
 export default function Home() {
   const navigationItems = [
     {
-      href: "#o-comeco-de-tudo",
+      href: "o-comeco-de-tudo",
       title: "O começo de tudo",
     },
     {
@@ -87,16 +92,39 @@ export default function Home() {
     typeof AsideNavigationMenu
   >["navigationItems"];
 
- const { activeItemIndex } = useScrollSpy()
+  const { activeItemIndex } = useScrollSpy()
 
+  const articleMeta: ComponentProps<typeof ArticleMeta> = {
+    title: "Type vs interface",
+    description:
+      "Você vai se surpreender com o que encontrei sobre Type Vs Interface. Olha esse artigo! 🤯",
+    createdAt: "01/04/2025",
+    readingTime: "10 min de leitura",
+    coverImage: Banner,
+    coverAlt: "TypeScript: Type vs Interface",
+  };
+
+  const breadcrumbItems: ComponentProps<typeof Breadcrumbs>["items"] = [
+    { label: "Home", href: "/" },
+    { label: "Type vs interface" },
+  ];
 
   return (
     <>
       <main className="flex col-span-12 sm:col-span-9 py-8">
         <article className="flex flex-col gap-4 px-4 sm:pr-12 pl-6 xl:pl-0 max-w-full">
-          <h1 className="opacity-100 font-bold text-2xl text-pretty text-title lg:text-3xl tracking-wide text-start">
-            Type vs interface
-          </h1>
+          <Breadcrumbs items={breadcrumbItems} className="mb-6" />
+
+          <ArticleMeta
+            description={articleMeta.description}
+            title={articleMeta.title}
+            createdAt={articleMeta.createdAt}
+            readingTime={articleMeta.readingTime}
+            coverImage={articleMeta.coverImage}
+            coverAlt={articleMeta.coverAlt}
+            className="mb-6"
+          />
+
           <p>
             Sim, é mais um artigo sobre type vs interface, quando usar cada um e
             etc, mas eu te prometo que esse vai ser diferente de todos que você
@@ -106,7 +134,7 @@ export default function Home() {
             sempre existiu, por pelo menos dois motivos.
           </p>
           <h4
-            className="opacity-100 my-4 text-xl lg:text-2xl text-start"
+            className="opacity-100 mt-3 mb-2 text-xl lg:text-2xl text-start"
             id="o-comeco-de-tudo"
           >
             {navigationItems[0].title}
@@ -205,10 +233,10 @@ export default function Home() {
             </Link>
             , mas com certeza não todas elas, agora finalmente entraremos no
             assunto, explicarei as diferenças, começaremos com as diferenças
-            mais básicas e iremos até as mais avançadas, bora lá?
+            mais básicas e iremos até as mais avançadas.
           </p>
           <h4
-            className="opacity-100 my-4 text-xl lg:text-2xl text-start"
+            className="opacity-100 mt-3 mb-2 text-xl lg:text-2xl text-start"
             id={navigationItems[1].href}
           >
             {navigationItems[1].title}
@@ -240,7 +268,7 @@ export default function Home() {
             utilizadas com implements.
           </p>
           <h4
-            className="opacity-100 my-4 text-xl lg:text-2xl text-start"
+            className="opacity-100 mt-3 mb-2 text-xl lg:text-2xl text-start"
             id={navigationItems[2].href}
           >
             {navigationItems[2].title}
@@ -301,7 +329,7 @@ export default function Home() {
           </p>
 
           <h4
-            className="opacity-100 my-4 text-xl lg:text-2xl text-start"
+            className="opacity-100 mt-3 mb-2 text-xl lg:text-2xl text-start"
             id={navigationItems[3].href}
           >
             {navigationItems[3].title}
@@ -327,7 +355,7 @@ export default function Home() {
             proposital, falaremos mais sobre em breve.
           </p>
           <h4
-            className="opacity-100 my-4 text-xl lg:text-2xl text-start"
+            className="opacity-100 mt-3 mb-2 text-xl lg:text-2xl text-start"
             id={navigationItems[4].href}
           >
             {navigationItems[4].title}
@@ -371,7 +399,7 @@ export default function Home() {
           </p>
           <InterfacesWithDerivedPropertyTypes />
           <h4
-            className="opacity-100 my-4 text-xl lg:text-2xl text-start"
+            className="opacity-100 mt-3 mb-2 text-xl lg:text-2xl text-start"
             id={navigationItems[5].href}
           >
             {navigationItems[5].title}
@@ -398,7 +426,7 @@ export default function Home() {
           </p>
           <InterfaceWithSamePropertyIntersected />
           <h4
-            className="opacity-100 my-4 text-xl lg:text-2x text-start"
+            className="opacity-100 mt-3 mb-2 text-xl lg:text-2x text-start"
             id={navigationItems[6].href}
           >
             {navigationItems[6].title}
@@ -435,7 +463,7 @@ export default function Home() {
           </p>
           <InterfaceWithExplicitIndexSignature />
           <h4
-            className="opacity-100 my-4 text-xl lg:text-2xl text-start"
+            className="opacity-100 mt-3 mb-2 text-xl lg:text-2xl text-start"
             id={navigationItems[7].href}
           >
             {navigationItems[7].title}
@@ -465,7 +493,7 @@ export default function Home() {
             mas faz bem levar isso em conta ao escolher entre um ou outro.
           </p>
           <h4
-            className="opacity-100 my-4 text-xl lg:text-2xl text-start"
+            className="opacity-100 mt-3 mb-2 text-xl lg:text-2xl text-start"
             id={navigationItems[8].href}
           >
             {navigationItems[8].title}
@@ -667,7 +695,7 @@ export default function Home() {
           </p>
 
           <h4
-            className="opacity-100 my-4 text-xl lg:text-2xl text-start"
+            className="opacity-100 mt-3 mb-2 text-xl lg:text-2xl text-start"
             id={navigationItems[9].href}
           >
             {navigationItems[9].title}
@@ -716,7 +744,7 @@ export default function Home() {
           </p>
 
           <h4
-            className="opacity-100 my-4 text-xl lg:text-2xl text-start"
+            className="opacity-100 mt-3 mb-2 text-xl lg:text-2xl text-start"
             id={navigationItems[10].href}
           >
             {navigationItems[10].title}
@@ -746,6 +774,31 @@ export default function Home() {
       </main>
       
       <AsideNavigationMenu activeItemIndex={activeItemIndex} navigationItems={navigationItems} />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "TechArticle",
+          headline: "TypeScript: Type vs Interface - Uma Análise Profunda",
+          description:
+            "Descubra as diferenças entre types e interfaces no TypeScript com exemplos práticos.",
+          author: {
+            "@type": "Person",
+            name: "Alves",
+            url: "https://alvseven.com",
+          },
+          publisher: {
+            "@type": "Organization",
+            name: "Alvseven",
+            logo: {
+              "@type": "ImageObject",
+              url: "https://www.alvseven.com/icon.ico",
+            },
+          },
+          datePublished: articleMeta.createdAt,
+          dateModified: articleMeta.createdAt,
+          image: articleMeta.coverImage,
+        }}
+      />
     </>
   );
 }

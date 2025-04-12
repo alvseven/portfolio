@@ -23,13 +23,18 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: '/content',
-        destination: '/',
+        source: "/content",
+        destination: "/",
         permanent: true,
       },
       {
-        source: '/content/:slug*',
-        destination: '/:slug*',
+        source: "/content/:slug*",
+        destination: "/:slug*",
+        permanent: true,
+      },
+      {
+        source: "/type-vs-interface-deep-dive",
+        destination: "/type-vs-interface",
         permanent: true,
       },
     ];

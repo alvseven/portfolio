@@ -39,7 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${montserrat.variable} ${sora.variable} ${firaCode.variable}`}
+        className={`${montserrat.variable} ${sora.variable} ${firaCode.variable} px-4`}
       >
         <Header />
         {children}
