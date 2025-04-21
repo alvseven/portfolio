@@ -13,8 +13,8 @@ interface ArticleMetaProps {
   createdAt: string;
   updatedAt?: string;
   readingTime: string;
-  coverImage: string | StaticImageData;
-  coverAlt: string;
+  coverImage?: string | StaticImageData;
+  coverAlt?: string;
   className?: string;
 }
 

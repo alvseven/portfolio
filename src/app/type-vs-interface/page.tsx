@@ -93,7 +93,7 @@ export default async function Home() {
     description:
       "Você vai se surpreender com o que encontrei sobre Type Vs Interface. Olha esse artigo! 🤯",
     createdAt: "01/04/2025",
-    readingTime: "10 min de leitura",
+    readingTime: "12 min de leitura",
     coverImage: Banner,
     coverAlt: "TypeScript: Type vs Interface",
   };
