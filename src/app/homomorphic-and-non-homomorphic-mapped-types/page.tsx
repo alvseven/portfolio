@@ -1,4 +1,4 @@
-import type { ComponentProps } from "react";
+import { useEffect, useState, type ComponentProps } from "react";
 import Link from "next/link";
 
 import Intro from "./mdx/intro.mdx";
@@ -8,6 +8,7 @@ import IsomorphicMappedTypeExample from "./mdx/isomorphic-mapped-type-example.md
 import { AsideNavigationMenu } from "../(shared)/components/ui/aside-navigation-menu";
 
 import { ExternalRedirectIcon } from "@/app/(shared)/components/icons/external-redirect";
+import { useScrollSpy } from "@/hooks/article-progress";
 
 export default async function Home() {
   const navigationItems: ComponentProps<
@@ -27,6 +28,8 @@ export default async function Home() {
       withExternalRedirect: true,
     },
   ];
+   
+  const { activeItemIndex } = useScrollSpy()
 
   return (
     <>
@@ -113,7 +116,7 @@ export default async function Home() {
           </Link>
         </article>
       </main>
-      <AsideNavigationMenu navigationItems={navigationItems} />
+      <AsideNavigationMenu activeItemIndex={activeItemIndex} navigationItems={navigationItems} />
     </>
   );
 }
