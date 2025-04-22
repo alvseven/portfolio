@@ -34,6 +34,37 @@ import { AsideNavigationMenu } from "../(shared)/components/ui/aside-navigation-
 import { JsonLd } from "../(shared)/components/core/json-ld";
 import { Breadcrumbs } from "../(shared)/components/ui/breadcrumbs";
 import { ArticleMeta } from "../(shared)/components/ui/article-meta";
+import {
+  type RelatedArticle,
+  RelatedArticles,
+} from "../(shared)/components/ui/related-articles";
+
+const typescriptArticles: RelatedArticle[] = [
+  {
+    slug: "typescript-generics",
+    title: "Dominando Generics no TypeScript",
+    description:
+      "Um guia completo sobre como usar generics para criar componentes e funções reutilizáveis.",
+    coverImage: "/placeholder.svg?height=400&width=600",
+    date: "25/03/2025",
+  },
+  {
+    slug: "typescript-utility-types",
+    title: "Utility Types no TypeScript",
+    description:
+      "Aprenda a usar os utility types do TypeScript para manipular tipos de forma eficiente.",
+    coverImage: "/placeholder.svg?height=400&width=600",
+    date: "15/03/2025",
+  },
+  {
+    slug: "typescript-decorators",
+    title: "Decorators no TypeScript",
+    description:
+      "Entenda como usar decorators para adicionar metadados e comportamentos às suas classes.",
+    coverImage: "/placeholder.svg?height=400&width=600",
+    date: "05/03/2025",
+  },
+];
 
 export default async function Home() {
   const navigationItems = [
@@ -764,8 +795,10 @@ export default async function Home() {
           </p>
 
           <FunctionsWithInterface />
+          <RelatedArticles articles={typescriptArticles} />
         </article>
       </main>
+
       <AsideNavigationMenu navigationItems={navigationItems} />
       <JsonLd
         data={{

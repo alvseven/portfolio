@@ -20,6 +20,15 @@ const withMDX = nextMDX({
 const nextConfig = {
   reactStrictMode: true,
   pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "i1.sndcdn.com",
+        pathname: "/**",
+      },
+    ],
+  },
   async redirects() {
     return [
       {
