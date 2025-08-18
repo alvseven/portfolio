@@ -415,7 +415,7 @@ export default async function Home() {
           <TypeWithSamePropertyIntersected />
           <p>
             Já com interfaces, as propriedades com os mesmos nomes precisam ter
-            os mesmos tipos. Na maioria dos casos, esse comportamento é
+            tipos compatíveis. Na maioria dos casos, esse comportamento é
             especialmente útil, mas depende do seu cenário.
           </p>
           <InterfaceWithSamePropertyIntersected />
